@@ -44,19 +44,39 @@
 .card:hover {
   transform: translate(2px, 2px);
   box-shadow: 4px 4px 0px var(--border-strong);
-  background-color: var(--text-primary);
-  color: var(--bg-base);
+  background-color: var(--text-primary) !important;
+  color: var(--bg-base) !important;
 }
-.card:hover .text-secondary {
-  color: var(--bg-base);
+
+/* Invert SEMUA elemen di dalam card (termasuk h3, span, div, dll) */
+.card:hover * {
+  color: var(--bg-base) !important;
+  border-color: var(--bg-base) !important;
 }
-.card:hover .badge {
-  border-color: var(--bg-base);
-  color: var(--bg-base);
+
+/* Mencegah tombol Primary menghilang ke dalam background */
+.card:hover .btn-primary {
+  background-color: var(--bg-base) !important;
+  color: var(--text-primary) !important;
 }
+.card:hover .btn-primary:hover {
+  background-color: var(--border-subtle) !important;
+}
+
+/* Menyesuaikan tombol Outline */
 .card:hover .btn-outline {
-  border-color: var(--bg-base);
-  color: var(--bg-base);
+  background-color: transparent !important;
+  color: var(--bg-base) !important;
+  border-color: var(--bg-base) !important;
+}
+.card:hover .btn-outline:hover {
+  background-color: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Mencegah kotak gambar (placeholder) jadi transparan sepenuhnya */
+.card:hover .img-placeholder {
+  background-color: var(--text-secondary) !important;
 }
 
 /* Glitch Effect */
