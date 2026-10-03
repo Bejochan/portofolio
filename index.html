@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adnan Oktar | Data Science & Engineering</title>
+  <meta name="description" content="Portfolio of Adnan Oktar, an Applied Data Science student specializing in Data Engineering, AI, and Backend Development." />
+  
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  
+  <!-- Fallback if JS is disabled -->
+  <noscript>
+    <style>
+      .tab-content { display: block; margin-bottom: 2rem; }
+      .tabs-container { display: none; }
+    </style>
+  </noscript>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <a href="#" class="flex items-center gap-4">
+        <img src="AO-logo.svg" alt="AO Logo" width="40" height="40" />
+        <span class="font-display font-bold text-lg">Adnan Oktar</span>
+      </a>
+      <div class="nav-links">
+        <button class="btn btn-outline text-sm">EN / ID (Coming Soon)</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="section" style="padding-top: 140px;">
+    <div class="container flex flex-col items-center justify-center text-center gap-6">
+      <h1 class="text-6xl text-primary font-display reveal">
+        Engineering Data into <br/>
+        <span class="text-hydrangea">Intelligent Systems.</span>
+      </h1>
+      <p class="text-xl text-secondary max-w-2xl reveal" style="max-width: 600px; transition-delay: 100ms;">
+        Applied Data Science student specializing in resilient backend architectures, machine learning integration, and scalable data engineering.
+      </p>
+      <div class="flex gap-4 mt-4 reveal" style="transition-delay: 200ms;">
+        <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+        <a href="mailto:contact@adnanoktar.vercel.app" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content (Tabs) -->
+  <main class="container section">
+    
+    <div class="tabs-container justify-center" id="portfolio">
+      <button class="tab-btn active" data-target="projects">Projects</button>
+      <button class="tab-btn" data-target="skills">Technical Skills</button>
+      <button class="tab-btn" data-target="experience">Experience</button>
+      <button class="tab-btn" data-target="education">Education</button>
+    </div>
+
+    <!-- Projects Tab -->
+    <div class="tab-content active" id="projects">
+      <div class="flex flex-col gap-16">
+        
+        <!-- REGOKEMON -->
+        <div class="project-row reveal">
+          <div class="project-info text-left">
+            <h3 class="text-4xl font-display mt-2 mb-4">REGOKEMON</h3>
+            <p class="text-secondary text-lg mb-6">
+              AI-powered Pokémon recognition system. Engineered a robust backend achieving &lt;200 ms GPU latency and implemented an interactive 6-axis psychographic polygon radar chart for multidimensional playstyle profiling.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="badge">TensorFlow</span>
+              <span class="badge">FastAPI</span>
+              <span class="badge">React</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="btn btn-outline text-sm">See Live</a>
+              <a href="#" class="btn text-hydrangea hover:text-white text-sm" style="text-decoration: underline;">Source Code</a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="aspect-video bg-elevated flex items-center justify-center project-img-placeholder">
+              <p class="text-secondary font-mono">🚧 Screenshot still working... 🚧</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web-ISPU -->
+        <div class="project-row reverse reveal">
+          <div class="project-info text-left">
+            <h3 class="text-4xl font-display mt-2 mb-4">Web-ISPU</h3>
+            <p class="text-secondary text-lg mb-6">
+              Air Pollution Standard Index (ISPU) monitoring system. Built robust 24-hour timestamptz handling and connection recycling, deployed inside Docker containers for predictable scaling.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="badge">Node.js</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Docker</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="btn btn-outline text-sm">See Live</a>
+              <a href="#" class="btn text-hydrangea hover:text-white text-sm" style="text-decoration: underline;">Source Code</a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="aspect-video bg-elevated flex items-center justify-center project-img-placeholder">
+              <p class="text-secondary font-mono">🚧 Screenshot still working... 🚧</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ELYSIA -->
+        <div class="project-row reveal">
+          <div class="project-info text-left">
+            <h3 class="text-4xl font-display mt-2 mb-4">ELYSIA</h3>
+            <p class="text-secondary text-lg mb-6">
+              Advanced conversational AI proxy. Designed and implemented a 6-tier cascading Gemini failover system ensuring ultra-high availability during API rate limits and unexpected token drops.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="badge">Gemini AI</span>
+              <span class="badge">Python</span>
+              <span class="badge">LangChain</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="btn btn-outline text-sm">See Live</a>
+              <a href="#" class="btn text-hydrangea hover:text-white text-sm" style="text-decoration: underline;">Source Code</a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="aspect-video bg-elevated flex items-center justify-center project-img-placeholder">
+              <p class="text-secondary font-mono">🚧 Screenshot still working... 🚧</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VibePlay -->
+        <div class="project-row reverse reveal">
+          <div class="project-info text-left">
+            <h3 class="text-4xl font-display mt-2 mb-4">VibePlay</h3>
+            <p class="text-secondary text-lg mb-6">
+              Algorithmic rhythm game. Integrated an auto-save checkpoint system per 50 game state ticks, preventing critical data loss during high-BPM state transitions.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="badge">Unity</span>
+              <span class="badge">C#</span>
+              <span class="badge">SQLite</span>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="btn btn-outline text-sm">See Live</a>
+              <a href="#" class="btn text-hydrangea hover:text-white text-sm" style="text-decoration: underline;">Source Code</a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="aspect-video bg-elevated flex items-center justify-center project-img-placeholder">
+              <p class="text-secondary font-mono">🚧 Screenshot still working... 🚧</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Skills Tab -->
+    <div class="tab-content" id="skills">
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <div class="reveal">
+          <h3 class="text-xl font-display mb-4 text-hydrangea">Programming Languages</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="badge">Python</span>
+            <span class="badge">JavaScript / TypeScript</span>
+            <span class="badge">C#</span>
+            <span class="badge">SQL</span>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay: 100ms;">
+          <h3 class="text-xl font-display mb-4 text-hydrangea">Machine Learning & AI</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="badge">TensorFlow</span>
+            <span class="badge">PyTorch</span>
+            <span class="badge">Scikit-Learn</span>
+            <span class="badge">LangChain</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-xl font-display mb-4 text-hydrangea">Data Engineering & Backend</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">Pandas</span>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay: 100ms;">
+          <h3 class="text-xl font-display mb-4 text-hydrangea">Tools & Cloud</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="badge">Docker</span>
+            <span class="badge">Git / GitHub</span>
+            <span class="badge">Vercel</span>
+            <span class="badge">Postman</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Experience Tab -->
+    <div class="tab-content" id="experience">
+      <div class="flex flex-col gap-6">
+        <div class="card reveal">
+          <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+            <h3 class="text-2xl font-display">Head of Operations Division</h3>
+            <span class="text-hydrangea font-mono">Jun 2026</span>
+          </div>
+          <p class="text-lg text-secondary mb-4">HIMITOPIA 2026</p>
+          <ul class="text-secondary" style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Orchestrated cross-functional operational workflows and logistical pipelines, ensuring seamless execution of technical exhibitions and seminars.</li>
+          </ul>
+        </div>
+
+        <div class="card reveal" style="transition-delay: 100ms;">
+          <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+            <h3 class="text-2xl font-display">Student Election Committee Member</h3>
+            <span class="text-hydrangea font-mono">Oct 2025 - Mar 2026</span>
+          </div>
+          <p class="text-lg text-secondary mb-4">KPU Suksesi HIMIT 2025</p>
+          <ul class="text-secondary" style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Managed the data integrity and transparency of the student council election process, coordinating technical voting infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Tab -->
+    <div class="tab-content" id="education">
+      <div class="card reveal">
+        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+          <h3 class="text-2xl font-display">D4 Applied Data Science</h3>
+          <span class="text-hydrangea font-mono">2024 - Present</span>
+        </div>
+        <p class="text-lg text-secondary mb-2">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+        <p class="text-secondary font-mono mt-4">
+          GPA: 3.63 / 4.00 <br/>
+          Credits: 76 SKS
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer / Contact -->
+  <footer class="section border-t border-subtle mt-12" style="border-top: 1px solid var(--border-subtle);">
+    <div class="container flex flex-col items-center justify-center text-center gap-4">
+      <h2 class="text-2xl font-display text-hydrangea">Let's Connect</h2>
+      <p class="text-secondary mb-4">Interested in collaborating or just want to say hi?</p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="https://linkedin.com/in/adnanoktar" class="nav-link">LinkedIn</a>
+        <a href="https://github.com/Bejochan" class="nav-link">GitHub</a>
+        <a href="tel:+6282230108129" class="nav-link">+62 822 3010 8129</a>
+      </div>
+      <p class="text-tertiary text-sm mt-8">© 2026 Adnan Oktar. Designed with geometric precision.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
