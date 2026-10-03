@@ -5,20 +5,24 @@
   left: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid white;
+  border: 2px solid var(--accent-primary);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background-color 0.2s;
-  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .custom-cursor.hover {
   width: 40px;
   height: 40px;
-  background-color: white;
+  background-color: var(--accent-primary);
+  opacity: 0.3;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 body {
   cursor: none; /* Hide default cursor */
+}
+a, button, .card {
+  cursor: none !important;
 }
 
 /* Invert Logo in Dark Mode */
@@ -31,8 +35,8 @@ body {
 #boot-loader {
   position: fixed;
   inset: 0;
-  background-color: #000;
-  color: #0f0;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
   z-index: 10000;
   display: flex;
   flex-direction: column;

@@ -11,6 +11,9 @@
   --border-subtle: #dddddd;
   --border-strong: #000000;
   
+  /* Accent Color (Hydrangea Purple/Blue) */
+  --accent-primary: #7A42D4; /* Distinct vibrant violet/purple */
+  
   /* Fonts */
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Outfit', sans-serif;
@@ -48,4 +51,7 @@
   
   --border-subtle: #333333;
   --border-strong: #ffffff;
+  
+  /* Accent Color (Hydrangea Purple/Blue) */
+  --accent-primary: #9B94FF;
 }

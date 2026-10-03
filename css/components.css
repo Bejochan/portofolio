@@ -17,8 +17,9 @@
   color: var(--bg-base);
 }
 .btn-primary:hover {
-  background-color: var(--bg-base);
-  color: var(--text-primary);
+  background-color: var(--accent-primary);
+  color: var(--bg-base);
+  border-color: var(--accent-primary);
 }
 
 .btn-outline {
@@ -26,8 +27,9 @@
   color: var(--text-primary);
 }
 .btn-outline:hover {
-  background-color: var(--text-primary);
+  background-color: var(--accent-primary);
   color: var(--bg-base);
+  border-color: var(--accent-primary);
 }
 
 /* Card */
@@ -70,7 +72,9 @@
   color: var(--text-primary) !important;
 }
 .card:hover .btn-primary:hover {
-  background-color: var(--border-subtle) !important;
+  background-color: var(--accent-primary) !important;
+  color: var(--bg-base) !important;
+  border-color: var(--accent-primary) !important;
 }
 
 /* Menyesuaikan tombol Outline */
@@ -89,20 +93,17 @@
   background-color: var(--text-secondary) !important;
 }
 
-/* Glitch Effect */
+/* Brutalist Drop Shadow Effect */
 .glitch-hover {
-  transition: transform 0.1s;
+  transition: transform 0.2s, filter 0.2s;
 }
 .glitch-hover:hover {
-  animation: glitch 0.2s linear infinite;
+  transform: translate(-4px, -4px);
+  filter: drop-shadow(4px 4px 0px var(--accent-primary));
 }
-@keyframes glitch {
-  0% { transform: translate(0) }
-  20% { transform: translate(-3px, 3px) }
-  40% { transform: translate(-3px, -3px) }
-  60% { transform: translate(3px, 3px) }
-  80% { transform: translate(3px, -3px) }
-  100% { transform: translate(0) }
+
+[data-theme="dark"] .glitch-hover:hover {
+  filter: invert(1) drop-shadow(-4px -4px 0px var(--accent-primary));
 }
 
 /* Badge */
@@ -114,6 +115,12 @@
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: all var(--transition-fast);
+}
+.badge:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-base) !important;
+  border-color: var(--accent-primary) !important;
 }
 
 /* Navbar */
@@ -127,7 +134,8 @@
 }
 .nav-links { display: flex; gap: var(--space-6); align-items: center; }
 .nav-link { color: var(--text-secondary); text-transform: uppercase; font-size: 0.875rem; letter-spacing: 1px;}
-.nav-link:hover, .nav-link.active { color: var(--text-primary); font-weight: 600; }
+.nav-link:hover { color: var(--accent-primary); font-weight: 600; }
+.nav-link.active { color: var(--accent-primary); font-weight: 600; border-bottom: 2px solid var(--accent-primary); padding-bottom: 2px; }
 
 /* Image Placeholder */
 .img-placeholder {

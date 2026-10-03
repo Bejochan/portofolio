@@ -68,11 +68,11 @@ window.addEventListener('load', () => {
     if (!sessionStorage.getItem('booted')) {
       sessionStorage.setItem('booted', 'true');
       const lines = [
-        "INITIALIZING KERNEL...",
-        "LOADING NEURAL WEIGHTS [██████████] 100%",
-        "MOUNTING DATA PIPELINES...",
-        "ESTABLISHING SECURE CONNECTION...",
-        "SYSTEM READY."
+        "Initializing deployment environment...",
+        "Resolving package dependencies...",
+        "Building static assets...",
+        "Starting edge functions...",
+        "Deployment successful. Routing traffic..."
       ];
       let i = 0;
       const content = document.getElementById('boot-content');

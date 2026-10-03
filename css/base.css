@@ -7,6 +7,11 @@
   padding: 0;
 }
 
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--bg-base);
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -36,7 +41,7 @@ a {
 }
 
 a:hover {
-  color: var(--hydrangea-400);
+  color: var(--accent-primary);
 }
 
 button {
