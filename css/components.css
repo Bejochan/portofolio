@@ -33,14 +33,46 @@
 /* Card */
 .card {
   background-color: var(--bg-base);
-  border: 1px solid var(--border-subtle);
+  border: 2px solid var(--border-strong);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  transition: border-color var(--transition-fast);
+  transition: all var(--transition-fast);
+  box-shadow: 6px 6px 0px var(--border-strong);
+  cursor: none; /* override for custom cursor */
 }
 .card:hover {
-  border-color: var(--border-strong);
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px var(--border-strong);
+  background-color: var(--text-primary);
+  color: var(--bg-base);
+}
+.card:hover .text-secondary {
+  color: var(--bg-base);
+}
+.card:hover .badge {
+  border-color: var(--bg-base);
+  color: var(--bg-base);
+}
+.card:hover .btn-outline {
+  border-color: var(--bg-base);
+  color: var(--bg-base);
+}
+
+/* Glitch Effect */
+.glitch-hover {
+  transition: transform 0.1s;
+}
+.glitch-hover:hover {
+  animation: glitch 0.2s linear infinite;
+}
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-3px, 3px) }
+  40% { transform: translate(-3px, -3px) }
+  60% { transform: translate(3px, 3px) }
+  80% { transform: translate(3px, -3px) }
+  100% { transform: translate(0) }
 }
 
 /* Badge */

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adnan Oktar | Persona</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../profile/index.html" class="nav-link">Profile</a>
+        <a href="../project/index.html" class="nav-link">Projects</a>
+        <a href="index.html" class="nav-link active">Persona</a>
+      </div>
+      <div class="nav-links">
+        <button id="theme-toggle" class="btn btn-outline" style="border: none; cursor: none;">DARK [X]</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container section text-center">
+    <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">Off-Duty Logs</h1>
+    <p class="text-tertiary" style="margin-bottom: 3rem;">
+      When I'm not architecting pipelines or fine-tuning models, this is where I log my human API requests.
+    </p>
+
+    <!-- PERFECT GRID FOR OFF-DUTY -->
+    <div class="grid md:grid-cols-2 gap-8 text-left">
+      
+      <div class="card gap-4">
+        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">AUDIO LOGS</h2>
+        <p class="text-secondary">Atmospheric playlists curated for deep focus during model training sessions.</p>
+        <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-2">
+          <li>> <a href="#" class="font-bold">Blueberry Cheesecake</a></li>
+          <li>> <a href="#" class="font-bold">Cassis Affogato</a></li>
+          <li>> <a href="#" class="font-bold">Apple Strudel</a></li>
+        </ul>
+      </div>
+
+      <div class="card gap-4">
+        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">CULTURE FIT</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <h3 class="font-bold mb-1">MBTI Type</h3>
+            <p class="font-mono text-secondary">INTJ-A</p>
+          </div>
+          <div>
+            <h3 class="font-bold mb-1">Hogwarts House</h3>
+            <p class="font-mono text-secondary">Ravenclaw</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card gap-4 md:col-span-2">
+        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">REPOSITORIES OF LEISURE</h2>
+        <div class="flex flex-wrap gap-4 mt-2">
+          <a href="#" class="btn btn-outline" style="flex: 1; text-align: center;">Letterboxd</a>
+          <a href="#" class="btn btn-outline" style="flex: 1; text-align: center;">Steam</a>
+          <a href="#" class="btn btn-outline" style="flex: 1; text-align: center;">Goodreads</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  
+  <script src="../js/core.js"></script>
+</body>
+</html>

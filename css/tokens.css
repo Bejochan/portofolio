@@ -37,17 +37,15 @@
   --transition-fast: 150ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-base: #000000;
-    --bg-surface: #0a0a0a;
-    --bg-elevated: #111111;
-    
-    --text-primary: #ffffff;
-    --text-secondary: #aaaaaa;
-    --text-tertiary: #666666;
-    
-    --border-subtle: #333333;
-    --border-strong: #ffffff;
-  }
+[data-theme="dark"] {
+  --bg-base: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-elevated: #111111;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-tertiary: #666666;
+  
+  --border-subtle: #333333;
+  --border-strong: #ffffff;
 }

@@ -8,32 +8,36 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body>
+  <div id="boot-loader">
+    <div id="boot-content"></div>
+  </div>
+
   <nav class="navbar">
     <div class="container flex justify-between items-center">
       <div class="nav-links">
         <a href="index.html" class="nav-link active">Home</a>
+        <a href="profile/index.html" class="nav-link">Profile</a>
         <a href="project/index.html" class="nav-link">Projects</a>
-        <a href="skills/index.html" class="nav-link">Skills</a>
-        <a href="experience/index.html" class="nav-link">Experience</a>
-        <a href="education/index.html" class="nav-link">Education</a>
+        <a href="persona/index.html" class="nav-link">Persona</a>
       </div>
       <div class="nav-links">
-        <button class="btn btn-outline">EN / ID (Soon)</button>
+        <button id="theme-toggle" class="btn btn-outline" style="border: none; cursor: none;">DARK [X]</button>
       </div>
     </div>
   </nav>
 
   <main class="container section flex flex-col items-center justify-center text-center" style="min-height: 80vh;">
-    <!-- Huge Logo -->
-    <img src="img/AO-logo.svg" alt="AO Logo" style="width: 200px; height: 200px; margin-bottom: 2rem;" />
+    <!-- Huge Logo with Glitch -->
+    <img src="img/AO-logo.svg" alt="AO Logo" class="glitch-hover" style="width: 200px; height: 200px; margin-bottom: 2rem;" />
     
     <h1 class="font-display" style="font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;">
       Adnan Oktar
     </h1>
     <h2 class="text-secondary" style="font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400;">
-      Engineering Data into Intelligent Systems
+      <span id="typewriter" class="typewriter-text" data-text="Engineering Data into Intelligent Systems">&nbsp;</span>
     </h2>
     <p class="text-tertiary" style="max-width: 600px; margin-bottom: 3rem;">
       Applied Data Science student specializing in resilient backend architectures, machine learning integration, and scalable data engineering.
@@ -44,5 +48,7 @@
       <a href="mailto:contact@adnanoktar.vercel.app" class="btn btn-outline">Contact Me</a>
     </div>
   </main>
+  
+  <script src="js/core.js"></script>
 </body>
 </html>
