@@ -41,6 +41,16 @@
   box-shadow: 6px 6px 0px var(--border-strong);
   cursor: none; /* override for custom cursor */
 }
+
+/* Breathing room for typography inside cards */
+.card h2 {
+  margin-bottom: 1.5rem;
+}
+.card h3 {
+  margin-bottom: 0.25rem;
+}
+
+/* Brutalist Card Hover Inversion */
 .card:hover {
   transform: translate(2px, 2px);
   box-shadow: 4px 4px 0px var(--border-strong);

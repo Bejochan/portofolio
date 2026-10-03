@@ -48,79 +48,107 @@
       </div>
     </div>
 
-    <!-- Education & Certifications -->
+    <!-- 5-Card Brutalist Layout -->
     <div class="grid md:grid-cols-2 gap-8" style="margin-bottom: 4rem;">
-      <div class="card gap-2">
-        <h2 class="font-display" style="font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">EDUCATION</h2>
-        <h3 class="font-bold">Politeknik Elektronika Negeri Surabaya (PENS)</h3>
-        <p class="text-secondary font-mono">D4 Applied Data Science</p>
-        <p class="text-tertiary">Aug 2024 - Present (Expected 2028)</p>
-        <p class="font-mono mt-2">> Current GPA: 3.63 / 4.00</p>
-      </div>
       
-      <div class="card gap-2">
-        <h2 class="font-display" style="font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">CERTIFICATIONS</h2>
-        <h3 class="font-bold">EF SET English Certificate</h3>
-        <p class="text-secondary font-mono">C2 Proficient</p>
-        <p class="text-tertiary">EF Standard English Test</p>
-      </div>
-    </div>
-
-    <!-- Technical Skills -->
-    <div class="card gap-4" style="margin-bottom: 4rem;">
-      <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">TECHNICAL EXPERTISE</h2>
-      
-      <div>
-        <h3 class="font-bold mb-2">Machine Learning & Computer Vision</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">PyTorch</span> <span class="badge">OpenAI CLIP</span> <span class="badge">YOLOv8</span> <span class="badge">FAISS</span> <span class="badge">OpenCV</span> <span class="badge">Scikit-Learn</span>
+      <!-- Card 1: Education (Top Left) -->
+      <div class="card gap-4">
+        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">EDUCATION</h2>
+        <div>
+          <h3 class="font-bold">Politeknik Elektronika Negeri Surabaya (PENS)</h3>
+          <p class="text-secondary font-mono">D4 Applied Data Science</p>
+          <p class="text-tertiary">Aug 2024 - Present (Expected 2028)</p>
+          <p class="font-mono mt-2">> Current GPA: 3.63 / 4.00</p>
         </div>
       </div>
-      
-      <div class="mt-4">
-        <h3 class="font-bold mb-2">Backend & Data Engineering</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">Python</span> <span class="badge">PostgreSQL</span> <span class="badge">Supabase</span> <span class="badge">SQLAlchemy ORM</span> <span class="badge">Flask REST API</span> <span class="badge">Docker</span>
+
+      <!-- Card 2: Organization & Leadership (Top Right) -->
+      <div class="card gap-4 flex flex-col justify-between">
+        <div>
+          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">ORGANIZATION & LEADERSHIP</h2>
+          <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-4 mt-4">
+            <li>
+              <h3 class="font-bold">HIMITOPIA 2026</h3>
+              <p class="text-secondary font-mono">Head of Operations Division</p>
+            </li>
+            <li>
+              <h3 class="font-bold">KPU Suksesi HIMIT 2025</h3>
+              <p class="text-secondary font-mono">Student Election Committee Member</p>
+            </li>
+          </ul>
+        </div>
+        <a href="organization/index.html" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">View All Records & Certificates</a>
+      </div>
+
+      <!-- Card 3: Technical Expertise (Middle Full Width) -->
+      <div class="card gap-4 md:col-span-2">
+        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">TECHNICAL EXPERTISE</h2>
+        <div class="grid md:grid-cols-3 gap-6 mt-2">
+          <!-- ML & CV -->
+          <div>
+            <h3 class="font-bold mb-2">Machine Learning & CV</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">PyTorch</span> <span class="badge">OpenAI CLIP</span> <span class="badge">YOLOv8</span> <span class="badge">FAISS</span> <span class="badge">OpenCV</span> <span class="badge">Scikit-Learn</span>
+            </div>
+          </div>
+          <!-- Backend & Data Eng -->
+          <div>
+            <h3 class="font-bold mb-2">Backend & Data Eng</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Python</span> <span class="badge">PostgreSQL</span> <span class="badge">Supabase</span> <span class="badge">SQLAlchemy</span> <span class="badge">Flask</span> <span class="badge">Docker</span>
+            </div>
+          </div>
+          <!-- Software & Tools -->
+          <div>
+            <h3 class="font-bold mb-2">Software & Game Dev</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">C#</span> <span class="badge">Unity</span> <span class="badge">SQLite</span> <span class="badge">JavaScript</span> <span class="badge">Git</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Experience & Organization -->
-    <div class="grid md:grid-cols-2 gap-8">
-      
-      <div class="card gap-2">
-        <h2 class="font-display" style="font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">SELECTED INVOLVEMENTS</h2>
-        <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-4">
+      <!-- Card 4: Competition Certificates (Bottom Left) -->
+      <div class="card gap-4 flex flex-col justify-between">
+        <div>
+          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">COMPETITIONS</h2>
+          <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-4 mt-4">
+            <li>
+              <h3 class="font-bold">Satria Data 2026</h3>
+              <p class="text-secondary font-mono">National Participant</p>
+            </li>
+            <li>
+              <h3 class="font-bold">Samsung Innovation Campus</h3>
+              <p class="text-secondary font-mono">Participant</p>
+            </li>
+          </ul>
+        </div>
+        <a href="competitions/index.html" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">View All Records & Certificates</a>
+      </div>
+
+      <!-- Card 5: Languages (Bottom Right) -->
+      <div class="card gap-4">
+        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">LANGUAGES</h2>
+        <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-4 mt-2">
           <li>
-            <h3 class="font-bold">Satria Data 2026</h3>
-            <p class="text-secondary font-mono">Participant</p>
+            <h3 class="font-bold">Bahasa Indonesia</h3>
+            <p class="text-secondary font-mono">Native</p>
           </li>
           <li>
-            <h3 class="font-bold">Samsung Innovation Campus</h3>
-            <p class="text-secondary font-mono">Participant</p>
+            <h3 class="font-bold">English</h3>
+            <p class="text-secondary font-mono">Professional Working Proficiency</p>
+            <div class="flex gap-2 mt-2">
+              <a href="https://cert.efset.org/id/FkSvXU" target="_blank" class="badge hover:bg-white hover:text-black">EF SET (C2)</a>
+              <a href="../img/pept-certificate.jpg" target="_blank" class="badge hover:bg-white hover:text-black">PEPT (450)</a>
+            </div>
           </li>
           <li>
-            <h3 class="font-bold">Japan Create Group STEM Talent</h3>
-            <p class="text-secondary font-mono">Selected Participant</p>
+            <h3 class="font-bold">Japanese</h3>
+            <p class="text-secondary font-mono">Japan Create Group STEM Talent Program (In Progress)</p>
           </li>
         </ul>
       </div>
 
-      <div class="card gap-2">
-        <h2 class="font-display" style="font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">ORGANIZATION & LEADERSHIP</h2>
-        <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-4">
-          <li>
-            <h3 class="font-bold">HIMITOPIA 2026</h3>
-            <p class="text-secondary font-mono">Head of Operations Division</p>
-            <p class="text-tertiary">Jun 2026</p>
-          </li>
-          <li>
-            <h3 class="font-bold">KPU Suksesi HIMIT 2025</h3>
-            <p class="text-secondary font-mono">Student Election Committee Member</p>
-            <p class="text-tertiary">Oct 2025 - Mar 2026</p>
-          </li>
-        </ul>
-      </div>
     </div>
 
   </main>
