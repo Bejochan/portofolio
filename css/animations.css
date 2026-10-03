@@ -25,6 +25,12 @@ a, button, .card {
   cursor: none !important;
 }
 
+/* Disable custom cursor on mobile / touch devices */
+@media (pointer: coarse) {
+  .custom-cursor { display: none !important; }
+  body, a, button, .card { cursor: auto !important; }
+}
+
 /* Invert Logo in Dark Mode */
 [data-theme="dark"] .glitch-hover,
 [data-theme="dark"] img[alt="AO Logo"] {
