@@ -29,13 +29,82 @@
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">← Back to Projects</a>
     
     <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">VibePlay</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Interactive Storefront & Hybrid Recommender System</p>
-    
-    <div class="card gap-4" style="margin-bottom: 2rem;">
-      <h2 class="font-bold">STATUS: DEEP DIVE CONSTRUCTION</h2>
-      <p class="text-tertiary">
-        Halaman studi kasus ini sedang dirakit.
-      </p>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Hybrid Content-Based Filtering, Resilient Checkpoint Scraping & Data Sanitization</p>
+
+    <!-- Visuals -->
+    <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/vibeplay-1.png" alt="VibePlay Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/vibeplay-2.png" alt="VibePlay Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/vibeplay-3.png" alt="VibePlay Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/vibeplay-4.png" alt="VibePlay Screenshot" style="width: 100%; display: block;" />
+      </div>
+    </div>
+
+    <!-- Details Grid -->
+    <div class="grid md:grid-cols-3 gap-8" style="margin-bottom: 4rem;">
+      
+      <!-- Left Sidebar (Metadata & Links) -->
+      <div class="card gap-4" style="align-self: start;">
+        <h3 class="font-bold">Role</h3>
+        <p class="text-secondary font-mono">Solo Project</p>
+        
+        <h3 class="font-bold mt-6">Tech Stack</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span class="badge">Python 3.10</span>
+          <span class="badge">Scikit-Learn</span>
+          <span class="badge">Flask REST API</span>
+          <span class="badge">Steam Web API</span>
+          <span class="badge">RAWG API</span>
+          <span class="badge">Vanilla JS</span>
+          <span class="badge">Chart.js</span>
+          <span class="badge">Vercel</span>
+          <span class="badge">Render</span>
+        </div>
+
+        <h3 class="font-bold mt-6">Links</h3>
+        <div class="flex flex-col gap-2 mt-2">
+          <a href="https://vibeplay-recommendation-system.vercel.app/" target="_blank" class="btn btn-primary text-center">Live Demo</a>
+          <a href="https://github.com/Bejochan/video-games-recommendation-system" target="_blank" class="btn btn-outline text-center">Source Code</a>
+        </div>
+      </div>
+
+      <!-- Right Content (Case Study) -->
+      <div class="md:col-span-2">
+        <div class="card gap-6">
+          <h2 class="font-display" style="font-size: 2rem;">The Engineering Challenge & Objective</h2>
+          <p class="text-secondary" style="line-height: 1.8;">Commercial game marketplaces inundate users with massive catalogs lacking situational personalization. Building VibePlay required creating a fault-tolerant, checkpoint-persisted data ingestion pipeline capable of scraping thousands of games across Steam and RAWG APIs while surviving severe rate-limits (HTTP 429), cleaning dirty metadata, and executing weighted hybrid multi-attribute recommendation algorithms in real-time.</p>
+          
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
+          <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Fault-Tolerant Checkpoint Web Scraper:</strong> <code>fetch_data.py</code> auto-saves progress to <code>progress_temp.csv</code> every 50 games wrapped in <code>try...finally</code> blocks to prevent data loss.</li>
+            <li><strong>Automated Data Sanitization:</strong> <code>filter_prices.py</code> applies multi-layer regex pipelines to eliminate NSFW titles, reconcile irregular price formats, and map real Steam IDR currency data.</li>
+            <li><strong>Psychographic 12-Item Questionnaire:</strong> Evaluates player tendencies along Casual/Hardcore, Simple/Complex, and Calming/Adrenaline dimensions.</li>
+            <li><strong>Mood-Adjusted DNA:</strong> Dynamically shifts baseline DNA coordinates by 15%–35% based on momentary mood selections.</li>
+            <li><strong>Dual-Session Recommendation Engine:</strong> Computes Balanced Match and High-Rating Priority recommendations visualized via an interactive 6-axis psychographic polygon radar chart.</li>
+          </ol>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li>Prevented scraping failure and data loss across 24,082 games with automated checkpoint flushing.</li>
+            <li>Implemented weighted hybrid recommendation algorithms balancing genre overlap, DNA distance, and budget limits.</li>
+            <li>Developed an interactive 6-axis psychographic polygon radar chart visualizing multidimensional playstyle compatibility and dynamic mood vectors.</li>
+          </ul>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li><strong>Catalog Scale:</strong> 24,082 Curated Games</li>
+            <li><strong>Checkpoint Resilience:</strong> 50-item auto-flush (Zero data loss)</li>
+            <li><strong>Dimensionality:</strong> 6-Axis Psychographic Polygon Radar Profiling</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
   <script src="../../js/core.js"></script>

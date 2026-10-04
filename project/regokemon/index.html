@@ -29,16 +29,72 @@
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">← Back to Projects</a>
     
     <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">REGOKEMON</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Multimodal Visual Retrieval & Card Valuation Engine</p>
-    
-    <div class="card gap-4" style="margin-bottom: 2rem;">
-      <h2 class="font-bold">STATUS: DEEP DIVE CONSTRUCTION</h2>
-      <p class="text-tertiary">
-        Halaman studi kasus ini sedang dirakit. Nantinya akan berisi:
-        <br>- Diagram Arsitektur Multimodal
-        <br>- Benchmark Perbandingan Latensi GPU vs CPU
-        <br>- Kode Snippet Integrasi CLIP + FAISS
-      </p>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Multimodal Computer Vision, Vector Database Search & Real-Time Price Ingestion</p>
+
+    <!-- Visuals -->
+    <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
+      <div class="card flex justify-center items-center" style="min-height: 200px; padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <p class="text-secondary font-mono">🚧 No UI Images Available 🚧</p>
+      </div>
+    </div>
+
+    <!-- Details Grid -->
+    <div class="grid md:grid-cols-3 gap-8" style="margin-bottom: 4rem;">
+      
+      <!-- Left Sidebar (Metadata & Links) -->
+      <div class="card gap-4" style="align-self: start;">
+        <h3 class="font-bold">Role</h3>
+        <p class="text-secondary font-mono">Computer Vision (Card Identification) & Data Pipeline Engineer (Team Project)</p>
+        
+        <h3 class="font-bold mt-6">Tech Stack</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span class="badge">Python 3.12</span>
+          <span class="badge">OpenAI CLIP ViT-B/32</span>
+          <span class="badge">FAISS</span>
+          <span class="badge">PyTorch (CUDA)</span>
+          <span class="badge">OpenCV</span>
+          <span class="badge">ORB</span>
+          <span class="badge">Supabase</span>
+          <span class="badge">GitHub Actions</span>
+          <span class="badge">FastAPI</span>
+        </div>
+
+        <h3 class="font-bold mt-6">Links</h3>
+        <div class="flex flex-col gap-2 mt-2">
+          <a href="https://github.com/Bejochan/pokemon-card-value-analytic-tool" target="_blank" class="btn btn-outline text-center">Source Code</a>
+        </div>
+      </div>
+
+      <!-- Right Content (Case Study) -->
+      <div class="md:col-span-2">
+        <div class="card gap-6">
+          <h2 class="font-display" style="font-size: 2rem;">The Engineering Challenge & Objective</h2>
+          <p class="text-secondary" style="line-height: 1.8;">Trading card secondary marketplaces suffer from high transaction friction, subjective manual grading, and volatile pricing. Identifying a specific card among 20,400+ historical variants (especially distinguishing subtle holofoil/secret-rare prints) under varied camera angles, glare, and rotations is challenging. The goal was to build a low-latency visual retrieval engine coupled with an automated real-time price tracking pipeline.</p>
+          
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
+          <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Camera Frame Preprocessing:</strong> OpenCV (cv2) captures webcam or uploaded frames, applies Laplacian variance blur detection, and performs 4-way auto-orientation (0°, 90°, 180°, 270°).</li>
+            <li><strong>Dense Vector Embedding:</strong> Images are converted into 512-dimensional embeddings using OpenAI CLIP (ViT-B/32).</li>
+            <li><strong>Sub-millisecond Vector Retrieval:</strong> FAISS <code>IndexFlatIP</code> (Cosine Similarity) retrieves candidate matches from 20,400+ pre-indexed card vectors in < 200 ms.</li>
+            <li><strong>Fine-Grained ORB Re-Ranking:</strong> Expands candidate pool from 50 to 150 items (Commit <code>7707151</code>), using ORB feature keypoint matching and RANSAC homography estimation to discriminate holo-foil patterns.</li>
+            <li><strong>Automated Price Sync & Valuation:</strong> A daily GitHub Actions cron (<code>daily_price_tracker.py</code>) queries pokemontcg.io API, calculates effective market prices, and updates Supabase (<code>card_prices</code> and <code>card_price_history</code>).</li>
+          </ol>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li>Formatted 20,400+ card representations using OpenAI CLIP ViT-B/32 into a high-performance FAISS <code>IndexFlatIP</code>.</li>
+            <li>Transitioned inference from CPU (~1,200 ms) to local CUDA GPU acceleration (< 200 ms total latency) on an RTX workstation.</li>
+            <li>Engineered automated daily market price tracking cron in GitHub Actions updating Supabase with historical pricing.</li>
+          </ul>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li><strong>Inference Latency:</strong> < 200 ms (CUDA GPU)</li>
+            <li><strong>Catalog Scale:</strong> 20,400+ cards indexed</li>
+            <li><strong>Automation:</strong> 100% automated daily market pricing cron</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
   <script src="../../js/core.js"></script>

@@ -29,13 +29,81 @@
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">← Back to Projects</a>
     
     <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">ELYSIA</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Conversational Recommender & 6-Tier Cascading Failover Engine</p>
-    
-    <div class="card gap-4" style="margin-bottom: 2rem;">
-      <h2 class="font-bold">STATUS: DEEP DIVE CONSTRUCTION</h2>
-      <p class="text-tertiary">
-        Halaman studi kasus ini sedang dirakit.
-      </p>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Conversational AI, Psychographic Playstyle DNA & Cascading LLM Architecture</p>
+
+    <!-- Visuals -->
+    <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/elysia-1.png" alt="ELYSIA Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/elysia-2.png" alt="ELYSIA Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/elysia-3.png" alt="ELYSIA Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/elysia-4.png" alt="ELYSIA Screenshot" style="width: 100%; display: block;" />
+      </div>
+    </div>
+
+    <!-- Details Grid -->
+    <div class="grid md:grid-cols-3 gap-8" style="margin-bottom: 4rem;">
+      
+      <!-- Left Sidebar (Metadata & Links) -->
+      <div class="card gap-4" style="align-self: start;">
+        <h3 class="font-bold">Role</h3>
+        <p class="text-secondary font-mono">Solo Project</p>
+        
+        <h3 class="font-bold mt-6">Tech Stack</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span class="badge">Python 3.10</span>
+          <span class="badge">Google Gemini API</span>
+          <span class="badge">Flask (SSE)</span>
+          <span class="badge">NumPy</span>
+          <span class="badge">Pandas</span>
+          <span class="badge">Vanilla JS</span>
+          <span class="badge">SVG Math</span>
+          <span class="badge">Render</span>
+        </div>
+
+        <h3 class="font-bold mt-6">Links</h3>
+        <div class="flex flex-col gap-2 mt-2">
+          <a href="https://elysia-video-game-recommendation.onrender.com/" target="_blank" class="btn btn-primary text-center">Live Demo</a>
+          <a href="https://github.com/Bejochan/conversational-video-game-recommendation-assistant" target="_blank" class="btn btn-outline text-center">Source Code</a>
+        </div>
+      </div>
+
+      <!-- Right Content (Case Study) -->
+      <div class="md:col-span-2">
+        <div class="card gap-6">
+          <h2 class="font-display" style="font-size: 2rem;">The Engineering Challenge & Objective</h2>
+          <p class="text-secondary" style="line-height: 1.8;">Conventional game recommendation engines rely on rigid genre filters that fail to capture nuanced emotional intent, situational fatigue, or negative constraints (e.g., "fast-paced shooting, but absolutely no sword combat"). Building an LLM assistant to solve this in production faces two major bottlenecks: severe rate-limiting (HTTP 429 quota exhaustion) on cloud LLM tiers and high response latency destroying conversational immersion.</p>
+          
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
+          <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Conversational Stream:</strong> Client interacts via Server-Sent Events (SSE) for word-by-word streaming.</li>
+            <li><strong>Dual-Pass Prompt Orchestration:</strong> Generates editorial responses while extracting structured JSON parameters (mood, budget, 3D DNA coordinates) via a low-temperature deterministic pass (<code>temp=0.1</code>).</li>
+            <li><strong>6-Tier Cascading Failover (Commit <code>9ed7315</code>):</strong> Automatically cascades across <code>gemini-3.5-flash</code> &rarr; <code>3.6-flash</code> &rarr; <code>3.7-flash</code> &rarr; <code>3.8-flash</code> &rarr; <code>3.5-flash-lite</code> &rarr; <code>flash-latest</code> when encountering HTTP 429 errors.</li>
+            <li><strong>Stage 1 Fast Candidate Generation:</strong> Filters 24,082 games down to top 25 candidates using 3D Euclidean DNA distance, Jaccard genre similarity, and IDR budget constraints in < 50 ms.</li>
+            <li><strong>Stage 2 Neural LLM Re-Ranking:</strong> Validates granular nuances and negative constraints before rendering the top 6 games and dynamic SVG DNA radar charts.</li>
+          </ol>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li>Intercepted HTTP 429 quota exhaustion with a 6-tier cascading failover engine, ensuring continuous uptime.</li>
+            <li>Built graceful degradation mode utilizing accumulated session DNA scores and friendly user messaging if all cloud tiers are unavailable.</li>
+            <li>Designed zero-dependency frontend streaming parser using ES6 <code>ReadableStream</code> with dynamic client-side SVG radar visualization.</li>
+          </ul>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li><strong>Failover Depth:</strong> 6-Tier Cascade Resilience</li>
+            <li><strong>Vector Retrieval Latency:</strong> < 50 ms across 24,082 games</li>
+            <li><strong>Curated Catalog:</strong> 24,082 games with live Steam IDR pricing</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
   <script src="../../js/core.js"></script>

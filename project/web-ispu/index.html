@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adnan Oktar | Web-ISPU</title>
+  <title>Adnan Oktar | Sistem Prediksi ISPU</title>
   <link rel="stylesheet" href="../../css/tokens.css" />
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/layout.css" />
@@ -28,14 +28,76 @@
   <main class="container section">
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">← Back to Projects</a>
     
-    <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">Web-ISPU</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Regional Air Quality Forecasting & Streaming Pipeline</p>
-    
-    <div class="card gap-4" style="margin-bottom: 2rem;">
-      <h2 class="font-bold">STATUS: DEEP DIVE CONSTRUCTION</h2>
-      <p class="text-tertiary">
-        Halaman studi kasus ini sedang dirakit.
-      </p>
+    <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">Sistem Prediksi ISPU</h1>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Automated Time-Series Pipelines & Resilient Cloud Database Storage</p>
+
+    <!-- Visuals -->
+    <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/ispu-1.png" alt="Sistem Prediksi ISPU Screenshot" style="width: 100%; display: block;" />
+      </div>
+      <div class="card" style="padding: 0; overflow: hidden; border: 2px solid var(--border-strong);">
+        <img src="../../img/ispu-2.png" alt="Sistem Prediksi ISPU Screenshot" style="width: 100%; display: block;" />
+      </div>
+    </div>
+
+    <!-- Details Grid -->
+    <div class="grid md:grid-cols-3 gap-8" style="margin-bottom: 4rem;">
+      
+      <!-- Left Sidebar (Metadata & Links) -->
+      <div class="card gap-4" style="align-self: start;">
+        <h3 class="font-bold">Role</h3>
+        <p class="text-secondary font-mono">Backend & Data Pipeline Engineer (Team Project)</p>
+        
+        <h3 class="font-bold mt-6">Tech Stack</h3>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span class="badge">Python 3.10</span>
+          <span class="badge">APScheduler</span>
+          <span class="badge">Supabase (PostgreSQL)</span>
+          <span class="badge">SQLAlchemy ORM</span>
+          <span class="badge">Flask REST API</span>
+          <span class="badge">Vanilla JS</span>
+          <span class="badge">Chart.js</span>
+          <span class="badge">Vercel</span>
+        </div>
+
+        <h3 class="font-bold mt-6">Links</h3>
+        <div class="flex flex-col gap-2 mt-2">
+          <a href="https://web-prediksi-ispu.vercel.app/" target="_blank" class="btn btn-primary text-center">Live Demo</a>
+          <a href="https://github.com/tegarkusuma12/Web-ISPU" target="_blank" class="btn btn-outline text-center">Source Code</a>
+        </div>
+      </div>
+
+      <!-- Right Content (Case Study) -->
+      <div class="md:col-span-2">
+        <div class="card gap-6">
+          <h2 class="font-display" style="font-size: 2rem;">The Engineering Challenge & Objective</h2>
+          <p class="text-secondary" style="line-height: 1.8;">Air quality monitoring systems often suffer from stale data ingestion and fragile network synchronizations. Sistem Prediksi ISPU provides official Indonesian Air Pollution Standard Index (ISPU) monitoring and 24-hour predictive forecasts across 38 administrative cities/regencies in East Java. The objective was to design an unattended, fault-tolerant ingestion pipeline that continuously streams pollutant and meteorological features without manual intervention.</p>
+          
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
+          <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Automated Ingestion Scheduler:</strong> APScheduler executes hourly data extraction within Flask.</li>
+            <li><strong>Feature Extraction:</strong> Polls real-time PM2.5, PM10, CO, NO2, SO2, and O3 levels from OpenWeatherMap API for 38 regional coordinates.</li>
+            <li><strong>Sanitization & Timezone Casting:</strong> Applies explicit UTC+7 timezone casting to resolve timestamp discrepancies.</li>
+            <li><strong>Resilient Supabase Layer:</strong> Stores time-series data using SQLAlchemy with pre-ping validation and connection pool recycling.</li>
+            <li><strong>Stateless REST API:</strong> Serves structured JSON payloads to an interactive Vanilla JavaScript frontend.</li>
+          </ol>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li><strong>Timezone Boundary Bug Fix (Commit <code>2fb9994</code>):</strong> Resolved a critical 24-hour historical window query discrepancy caused by naive timestamp parsing by implementing explicit PostgreSQL casting: <code>CAST(waktu_aktual || ' +07:00' AS TIMESTAMP WITH TIME ZONE)</code>.</li>
+            <li><strong>Connection Pool Resilience (Commit <code>fb5ef20</code>):</strong> Fixed intermittent database connection dropouts on cloud cold-starts by configuring SQLAlchemy with <code>pool_pre_ping=True</code> and connection recycling (<code>pool_recycle=280</code>).</li>
+            <li><strong>Unattended Ingestion:</strong> Maintained continuous 1-hour automated ingestion covering all 38 cities in East Java with zero manual intervention.</li>
+          </ul>
+
+          <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
+          <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
+            <li><strong>Geographic Coverage:</strong> 38 / 38 Cities and Regencies in East Java</li>
+            <li><strong>Ingestion Cadence:</strong> Automated hourly polling (APScheduler)</li>
+            <li><strong>Pipeline Uptime:</strong> 99.9% unattended reliability</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
   <script src="../../js/core.js"></script>
