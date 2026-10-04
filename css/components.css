@@ -32,6 +32,21 @@
   border-color: var(--accent-primary);
 }
 
+
+/* Static Card (No Hover Inversion) */
+.card-static {
+  background-color: var(--bg-base);
+  border: 2px solid var(--border-strong);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 6px 0px var(--border-strong);
+  cursor: none;
+}
+.card-static h2 {
+  margin-bottom: 0;
+}
+
 /* Card */
 .card {
   background-color: var(--bg-base);
@@ -46,7 +61,7 @@
 
 /* Breathing room for typography inside cards */
 .card h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 .card h3 {
   margin-bottom: 0.25rem;
@@ -159,4 +174,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Brutalist Tooltip */
+.brutalist-tooltip {
+  position: fixed;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  border: 2px solid var(--border-strong);
+  padding: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  box-shadow: 4px 4px 0px var(--border-strong);
+  transition: opacity 0.15s ease;
+  max-width: 250px;
+  line-height: 1.4;
+}
+.brutalist-tooltip.visible {
+  opacity: 1;
 }

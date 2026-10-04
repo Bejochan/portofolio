@@ -45,45 +45,92 @@
     </p>
 
     <!-- PERFECT GRID FOR OFF-DUTY -->
-    <div class="grid md:grid-cols-2 gap-8 text-left">
+    
+    
+    
+    <div class="grid md:grid-cols-2 gap-8 text-left items-start">
       
-      <div class="card gap-4">
-        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">AUDIO LOGS</h2>
-        <p class="text-secondary">Atmospheric playlists curated for deep focus during model training sessions.</p>
-        <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-2">
-          <li>> <a href="https://open.spotify.com/user/312ablatv2yks3ugfrjx4hwvrbhm" target="_blank" class="font-bold">Blueberry Cheesecake</a></li>
-          <li>> <a href="https://open.spotify.com/user/312ablatv2yks3ugfrjx4hwvrbhm" target="_blank" class="font-bold">Cassis Affogato</a></li>
-          <li>> <a href="https://open.spotify.com/user/312ablatv2yks3ugfrjx4hwvrbhm" target="_blank" class="font-bold">Apple Strudel</a></li>
-        </ul>
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col gap-8 w-full">
+        <!-- CULTURE FIT -->
+        <div class="card gap-4">
+          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">CULTURE FIT</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <h3 class="font-bold mb-1 text-sm">MBTI Type</h3>
+              <p class="font-mono text-primary font-bold">INFJ-T</p>
+              <p class="text-secondary text-sm">Advocate (Visionary)</p>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1 text-sm">Enneagram</h3>
+              <p class="font-mono text-primary font-bold">Type 5</p>
+              <p class="text-secondary text-sm">The Investigator</p>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1 text-sm">Enneagram Wings</h3>
+              <p class="font-mono text-primary font-bold">5w4 & 5w6</p>
+              <p class="text-secondary text-sm" style="font-size: 0.8rem;">Iconoclast / Problem Solver</p>
+            </div>
+            <div>
+              <h3 class="font-bold mb-1 text-sm">Hogwarts House</h3>
+              <p class="font-mono text-primary font-bold">Slytherin</p>
+              <p class="text-secondary text-sm">Pride, Ambition, Cunning</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AUDIO LOGS -->
+        <div class="card gap-4">
+          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">AUDIO LOGS</h2>
+          <p class="text-secondary mb-2">Atmospheric playlists curated for deep focus during model training sessions.</p>
+          <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-3">
+            <li>> <a href="https://open.spotify.com/playlist/6mZDThXiUq5Eo7tAWcUEvW?si=ccb94fec96d74134" target="_blank" class="font-bold underline hover-glow">Blueberry Cheesecake</a></li>
+            <li>> <a href="https://open.spotify.com/playlist/5dxWhbv5Egq39CqkONp5rh?si=ad27c97214d44b50" target="_blank" class="font-bold underline hover-glow">Cassis Affogato</a></li>
+            <li>> <a href="https://open.spotify.com/playlist/7meEffakruv51EDBHAuNuX?si=89cb875be1894065" target="_blank" class="font-bold underline hover-glow">Apple Strudel</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card gap-4">
-        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">CULTURE FIT</h2>
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <h3 class="font-bold mb-1">MBTI Type</h3>
-            <p class="font-mono text-secondary">INTJ-A</p>
-          </div>
-          <div>
-            <h3 class="font-bold mb-1">Hogwarts House</h3>
-            <p class="font-mono text-secondary">Ravenclaw</p>
+      <!-- RIGHT COLUMN -->
+      <div class="flex flex-col gap-8 w-full">
+        <!-- RADAR CHART (STATIC CARD) -->
+        <div class="card-static gap-4 flex flex-col items-center h-full">
+          <h2 class="font-display w-full" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem; text-align: left;">MULTIDIMENSIONAL PROFILING</h2>
+          <p class="text-secondary w-full text-left" style="margin-bottom: 0.5rem; font-size: 0.9rem;">Aggregated psychographic telemetry derived from MBTI (INFJ-T) and Wizarding World heuristics. Hover over nodes for logs.</p>
+          <div style="width: 100%; max-width: 400px; margin-top: auto; margin-bottom: auto;">
+            
+    <svg width="100%" height="100%" viewBox="-120 -50 540 400" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+        <polygon points="150.0,128.0 169.1,139.0 169.1,161.0 150.0,172.0 130.9,161.0 130.9,139.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,106.0 188.1,128.0 188.1,172.0 150.0,194.0 111.9,172.0 111.9,128.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,84.0 207.2,117.0 207.2,183.0 150.0,216.0 92.8,183.0 92.8,117.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,62.0 226.2,106.0 226.2,194.0 150.0,238.0 73.8,194.0 73.8,106.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,40.0 245.3,95.0 245.3,205.0 150.0,260.0 54.7,205.0 54.7,95.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/>
+        <line x1="150.0" y1="150.0" x2="150.0" y2="40.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="245.3" y2="95.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="245.3" y2="205.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="150.0" y2="260.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="54.7" y2="205.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="54.7" y2="95.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/>
+        <polygon points="150.0,82.9 231.0,103.2 205.3,181.9 150.0,208.3 94.7,181.9 90.0,115.3" fill="var(--accent-primary)" opacity="0.3" stroke="var(--accent-primary)" stroke-width="3" style="pointer-events: none;"/>
+        <circle cx="150.0" cy="82.9" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="STRATEGIC PLANNING (61%): Architecting robust pipelines & anticipating systemic failures."></circle><circle cx="231.0" cy="103.2" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="RESOURCE CUNNING (85%): Optimizing infrastructure costs and achieving maximum output."></circle><circle cx="205.3" cy="181.9" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="SYSTEM VIGILANCE (58%): Relentless debugging, active monitoring, and edge-case anticipation."></circle><circle cx="150.0" cy="208.3" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="HEURISTIC LOGIC (53%): Intuitive problem solving when raw data is ambiguous or incomplete."></circle><circle cx="94.7" cy="181.9" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="ABSTRACT VISION (58%): Formulating innovative multimodal solutions and conceptual architectures."></circle><circle cx="90.0" cy="115.3" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="SOLO EXECUTION (63%): Deep work capability & independent sprint velocity."></circle>
+        <text x="150.0" y="19.0" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="middle" style="cursor: help;" data-tooltip="Architecting robust pipelines & anticipating systemic failures.">STRATEGIC PLANNING (61%)</text><text x="266.9" y="86.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="start" style="cursor: help;" data-tooltip="Optimizing infrastructure costs and achieving maximum output.">RESOURCE CUNNING (85%)</text><text x="266.9" y="221.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="start" style="cursor: help;" data-tooltip="Relentless debugging, active monitoring, and edge-case anticipation.">SYSTEM VIGILANCE (58%)</text><text x="150.0" y="289.0" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="middle" style="cursor: help;" data-tooltip="Intuitive problem solving when raw data is ambiguous or incomplete.">HEURISTIC LOGIC (53%)</text><text x="33.1" y="221.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="end" style="cursor: help;" data-tooltip="Formulating innovative multimodal solutions and conceptual architectures.">ABSTRACT VISION (58%)</text><text x="33.1" y="86.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="end" style="cursor: help;" data-tooltip="Deep work capability & independent sprint velocity.">SOLO EXECUTION (63%)</text>
+    </svg>
+    
           </div>
         </div>
       </div>
 
-      <div class="card gap-4 md:col-span-2">
-        <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">REPOSITORIES OF LEISURE</h2>
-        <div class="flex flex-wrap gap-4 mt-2">
-          <a href="https://letterboxd.com/Bejochan/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Letterboxd</a>
-          <a href="https://steamcommunity.com/profiles/76561198847624087/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Steam</a>
-          <a href="https://backloggd.com/u/Bejo/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Backloggd</a>
-          <a href="https://www.goodreads.com/user/show/182595097-bejo" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Goodreads</a>
-          <a href="https://www.instagram.com/adnan._oktar/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Instagram</a>
+      <!-- REPOSITORIES OF LEISURE (Spanning Both Columns) -->
+      <div class="md:col-span-2">
+        <div class="card gap-4">
+          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">REPOSITORIES OF LEISURE</h2>
+          <p class="text-secondary mb-2">Archived multimedia artifacts and computational simulations.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://letterboxd.com/Bejochan/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Letterboxd</a>
+            <a href="https://steamcommunity.com/profiles/76561198847624087/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Steam</a>
+            <a href="https://backloggd.com/u/Bejo/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Backloggd</a>
+            <a href="https://www.goodreads.com/user/show/182595097-bejo" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Goodreads</a>
+            <a href="https://www.instagram.com/adnan._oktar/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center;">Instagram</a>
+          </div>
         </div>
       </div>
 
     </div>
   </main>
+
+
+
   
   <script src="../js/core.js"></script>
 </body>

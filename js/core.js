@@ -120,3 +120,53 @@ if (langBtn && langMenu) {
     }
   });
 }
+
+// Brutalist Tooltip Logic
+const customTooltip = document.createElement('div');
+customTooltip.className = 'brutalist-tooltip';
+document.body.appendChild(customTooltip);
+
+document.addEventListener('mouseover', (e) => {
+  const target = e.target.closest('[data-tooltip]');
+  if (target) {
+    customTooltip.textContent = target.getAttribute('data-tooltip');
+    customTooltip.classList.add('visible');
+  } else {
+    customTooltip.classList.remove('visible');
+  }
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (customTooltip.classList.contains('visible')) {
+    customTooltip.style.left = (e.clientX + 15) + 'px';
+    customTooltip.style.top = (e.clientY + 15) + 'px';
+  }
+});
+
+// Smooth PPT-like Page Transition Interceptor
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all internal links
+  const internalLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"])');
+  
+  internalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      
+      // Trigger exit animation
+      document.body.classList.add('page-exit');
+      
+      // Wait for animation to finish (0.35s) before navigating
+      setTimeout(() => {
+        window.location.href = href;
+      }, 350); 
+    });
+  });
+});
+
+// Fix for browser back button cache restoring page with opacity 0
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+    document.body.classList.remove('page-exit');
+  }
+});
