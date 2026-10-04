@@ -15,19 +15,21 @@ The website is deployed and automatically synced via Vercel:
 
 ## ✨ Core Features
 - **Strict Monochrome Theme**: Designed with an absolute black, white, and gray palette to give an elegant architectural feel.
-- **Hydrangea Violet Accent**: A single, striking interactive accent color (`#7A42D4` for Light Mode, `#9B94FF` for Dark Mode) injected strictly on hovers, text selection, and active states to provide micro-interaction feedback without cluttering the UI.
+- **Hydrangea Violet Accent**: A single, striking interactive accent color (`#8c52ff`) injected strictly on hovers, text selection, and active states to provide micro-interaction feedback without cluttering the UI.
 - **Native Light/Dark Mode**: Built-in instantaneous theme toggling engine powered by root CSS variables and `localStorage` caching.
-- **Symmetrical Grid Layouts**: Calculated UI ratios for project cards and a perfectly balanced 5-card comprehensive Profile section.
+- **Absolute Precision Spacing**: Strict adherence to a 1rem (`gap-4`) spacing system across all structural components to maintain true Brutalist alignment.
 - **Micro-Interactions & Custom Cursor**: 
   - Sharp, brutalist square custom cursor that rotates into a diamond (`45deg`) on interactive elements.
   - Enterprise deployment-style boot loader sequence.
-  - Brutalist drop-shadow popping animations.
+  - Brutalist drop-shadow popping animations with precise `.card-static` exceptions for complex SVGs.
+- **Smooth PPT-like Page Transitions**: A custom Javascript link interceptor creates seamless, presentation-style `slide-up` and `fade-in` transitions across the Multi-page Application.
+- **Interactive Radar Chart**: A bespoke, pure SVG-based psychographic profiling engine (Radar Chart) integrated with a custom-built `.brutalist-tooltip` logic.
 
 ## 🗂️ Site Structure
-1. **Home**: Landing page with bold typography and quick overview.
-2. **Profile**: Detailed 5-card grid encompassing Education, Organization, Technical Expertise, Competitions, and Languages, with dedicated sub-pages for verifiable certificates.
+1. **Home**: High-impact landing page restricted to a strict 100vh, non-scrollable viewport (`overflow: hidden`).
+2. **Profile**: Detailed grid encompassing Education, Organization, Technical Expertise, Competitions, and Languages, with dedicated sub-pages for verifiable certificates.
 3. **Projects**: In-depth case studies for flagship Data Science and Software Engineering projects (Web-ISPU, REGOKEMON, ELYSIA, VibePlay).
-4. **Persona**: Personal identity, psychographic metrics (MBTI, Hogwarts House), and Spotify music integration.
+4. **Persona**: Personal identity, psychographic metrics (MBTI INFJ-T, Enneagram 5w4 & 5w6, Hogwarts House), Spotify audio logs, and repositories of leisure.
 
 ## 🚀 How to Run Locally
 Because this project is built entirely with pure HTML, CSS, and JS, no build tools or package managers (`npm`) are required.
