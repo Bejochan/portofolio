@@ -18,3 +18,7 @@ Thumbs.db
 
 # Log files
 *.log
+
+# Personal Certificates & Heavy Assets
+img/Panitia Organisasi/
+img/Partisipasi Lomba/
