@@ -12,6 +12,14 @@
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/animations.css" />
   <link rel="icon" type="image/svg+xml" href="../img/AO-logo.svg" />
+  <!-- Prevent Dark Mode FOUC -->
+  <script>
+    (function() {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
+      if (isDark) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
 </head>
 <body>
   <nav class="navbar">
@@ -84,7 +92,7 @@
         <div class="card gap-4 flex-1">
           <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">AUDIO LOGS</h2>
           <p class="text-secondary mb-2">Atmospheric playlists curated for deep focus during model training sessions.</p>
-          <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-3">
+                    <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-3">
             <li>> <a href="https://open.spotify.com/playlist/6mZDThXiUq5Eo7tAWcUEvW?si=ccb94fec96d74134" target="_blank" class="font-bold underline hover-glow">Blueberry Cheesecake</a></li>
             <li>> <a href="https://open.spotify.com/playlist/5dxWhbv5Egq39CqkONp5rh?si=ad27c97214d44b50" target="_blank" class="font-bold underline hover-glow">Cassis Affogato</a></li>
             <li>> <a href="https://open.spotify.com/playlist/7meEffakruv51EDBHAuNuX?si=89cb875be1894065" target="_blank" class="font-bold underline hover-glow">Apple Strudel</a></li>
@@ -144,36 +152,67 @@
             <!-- LETTERBOXD (FILMS) -->
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
-                <h3 class="font-bold">Letterboxd Top 4</h3>
+                <h3 class="font-bold flex items-center gap-2">
+                  <img src="https://cdn.simpleicons.org/letterboxd/white" alt="Letterboxd Logo" style="width: 16px; height: 16px;" />
+                  Letterboxd Top 4
+                </h3>
                 <a href="https://letterboxd.com/Bejochan/" target="_blank" class="badge hover:bg-white hover:text-black">@Bejochan</a>
               </div>
               <div class="grid grid-cols-2 gap-4">
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/sore.png" alt="SORE" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">SORE: Istri dari Masa Depan</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2025</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="SORE: Istri dari Masa Depan">SORE: Istri dari Masa Depan</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2025</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Romance</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://letterboxd.com/film/sore-a-wife-from-the-future/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 3.9/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">Yandy Laurens</span>
+                    </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/silent_voice.png" alt="A Silent Voice" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">A Silent Voice</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2016</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="A Silent Voice">A Silent Voice</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2016</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Drama</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://letterboxd.com/film/a-silent-voice-the-movie/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 4.2/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">Naoko Yamada</span>
+                    </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/basterds.png" alt="Inglourious Basterds" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">Inglourious Basterds</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2009</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Inglourious Basterds">Inglourious Basterds</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2009</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">War</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://letterboxd.com/film/inglourious-basterds/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 4.4/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">Quentin Tarantino</span>
+                    </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/suicide_squad.jpg" alt="The Suicide Squad" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">The Suicide Squad</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2021</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="The Suicide Squad">The Suicide Squad</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2021</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Action</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://letterboxd.com/film/the-suicide-squad/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 3.5/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">James Gunn</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -182,36 +221,73 @@
             <!-- BACKLOGGD (GAMES) -->
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
-                <h3 class="font-bold">Backloggd Top 4</h3>
+                <h3 class="font-bold flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" x2="10" y1="12" y2="12"></line>
+                    <line x1="8" x2="8" y1="10" y2="14"></line>
+                    <line x1="15" x2="15.01" y1="13" y2="13"></line>
+                    <line x1="18" x2="18.01" y1="11" y2="11"></line>
+                    <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+                  </svg>
+                  Backloggd Top 4
+                </h3>
                 <a href="https://backloggd.com/u/Bejo/" target="_blank" class="badge hover:bg-white hover:text-black">@Bejo</a>
               </div>
               <div class="grid grid-cols-2 gap-4">
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/dissidia.png" alt="Dissidia" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">Dissidia Final Fantasy</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2008</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Dissidia Final Fantasy">Dissidia Final Fantasy</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2008</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Fighter</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://backloggd.com/games/dissidia-final-fantasy/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 3.8/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">Square Enix</span>
+                    </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/bg3.jpg" alt="Baldur's Gate 3" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">Baldur's Gate 3</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2023</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Baldur's Gate 3">Baldur's Gate 3</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2023</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">CRPG</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://backloggd.com/games/baldurs-gate-iii/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 4.6/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">Larian Studios</span>
+                    </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/elden_ring.png" alt="Elden Ring" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">Elden Ring</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2022</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Elden Ring">Elden Ring</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2022</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">RPG</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://backloggd.com/games/elden-ring/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 4.6/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">FromSoftware</span>
+                    </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
                   <img src="../img/leisure/persona5.png" alt="Persona 5 Royal" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem;">Persona 5 Royal</p>
-                    <span class="badge" style="font-size: 0.65rem; padding: 0.15rem 0.4rem;">2019</span>
+                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Persona 5 Royal">Persona 5 Royal</p>
+                    <div class="flex flex-wrap gap-1 mb-1">
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2019</span>
+                      <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">JRPG</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <a href="https://backloggd.com/games/persona-5-royal/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">â˜… 4.5/5</a>
+                      <span class="font-mono text-secondary" style="font-size: 0.65rem;">Atlus</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -221,9 +297,18 @@
 
           <!-- OTHER LINKS -->
           <div class="flex flex-wrap gap-4 pt-2" style="border-top: 1px dashed var(--border-subtle);">
-            <a href="https://steamcommunity.com/profiles/76561198847624087/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center; font-size: 0.75rem; padding: 0.5rem;">Steam</a>
-            <a href="https://www.goodreads.com/user/show/182595097-bejo" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center; font-size: 0.75rem; padding: 0.5rem;">Goodreads</a>
-            <a href="https://www.instagram.com/adnan._oktar/" target="_blank" class="btn btn-outline" style="flex: 1; text-align: center; font-size: 0.75rem; padding: 0.5rem;">Instagram</a>
+            <a href="https://steamcommunity.com/profiles/76561198847624087/" target="_blank" class="btn btn-outline flex items-center justify-center gap-2" style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
+              <img src="https://cdn.simpleicons.org/steam/white" alt="Steam Logo" style="width: 14px; height: 14px;" />
+              Steam
+            </a>
+            <a href="https://www.goodreads.com/user/show/182595097-bejo" target="_blank" class="btn btn-outline flex items-center justify-center gap-2" style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
+              <img src="https://cdn.simpleicons.org/goodreads/white" alt="Goodreads Logo" style="width: 14px; height: 14px;" />
+              Goodreads
+            </a>
+            <a href="https://www.instagram.com/adnan._oktar/" target="_blank" class="btn btn-outline flex items-center justify-center gap-2" style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
+              <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram Logo" style="width: 14px; height: 14px;" />
+              Instagram
+            </a>
           </div>
 
         </div>

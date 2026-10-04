@@ -14,6 +14,14 @@
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/animations.css" />
   <link rel="icon" type="image/svg+xml" href="../img/AO-logo.svg" />
+  <!-- Prevent Dark Mode FOUC -->
+  <script>
+    (function() {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
+      if (isDark) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
 </head>
 <body>
   <nav class="navbar">

@@ -14,6 +14,14 @@
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="icon" type="image/svg+xml" href="img/AO-logo.svg" />
+  <!-- Prevent Dark Mode FOUC -->
+  <script>
+    (function() {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
+      if (isDark) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
 </head>
 <body style="overflow: hidden;">
   <div id="boot-loader">
@@ -47,7 +55,9 @@
 
   <main class="container flex flex-col items-center justify-center text-center" style="min-height: calc(100vh - 80px); padding-top: 1rem; padding-bottom: 2rem;">
     <!-- Huge Logo with Drop Shadow Pop -->
-    <img src="img/AO-logo.svg" alt="AO Logo" class="glitch-hover hero-logo-trigger" style="width: 250px; height: auto; margin-bottom: 1.5rem; position: relative; z-index: 10; cursor: crosshair;" />
+    <div class="glitch-hover hero-logo-trigger" style="display: inline-block; width: 250px; margin-bottom: 1.5rem; position: relative; z-index: 10; cursor: crosshair;">
+      <img src="img/AO-logo.svg" alt="AO Logo" style="width: 100%; height: auto; display: block;" />
+    </div>
     
     <h1 class="font-display" style="font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; position: relative; z-index: 10;">
       Adnan Oktar

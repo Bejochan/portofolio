@@ -143,23 +143,52 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-// Smooth PPT-like Page Transition Interceptor
+// Smooth Hortensia Page Transition Interceptor
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Home Page Intro Sequence
+  const heroPhoto = document.querySelector('.hero-hidden-photo');
+  const heroLogo = document.querySelector('.hero-logo-trigger');
+  if (heroPhoto && heroLogo) {
+    // Start with photo visible
+    document.body.classList.add('intro-active');
+    
+    // Dismiss photo after 1.2s
+    setTimeout(() => {
+      document.body.classList.remove('intro-active');
+      
+      // Twitch the logo as the photo leaves to draw attention
+      setTimeout(() => {
+        heroLogo.classList.add('logo-twitch');
+        setTimeout(() => {
+          heroLogo.classList.remove('logo-twitch');
+        }, 700);
+      }, 400); 
+    }, 1200);
+  }
+
   // Select all internal links
-  const internalLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"])');
+  const internalLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"])');
   
   internalLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const href = link.getAttribute('href');
       
-      // Trigger exit animation
+      // Determine destination name for transition text
+      let destName = link.textContent.trim().toUpperCase();
+      if(!destName || destName === "") {
+        destName = "DESTINATION";
+      }
+      
+      // Trigger exit animation with text
+      document.body.setAttribute('data-transition-text', `ROUTING TO ${destName} //`);
       document.body.classList.add('page-exit');
       
-      // Wait for animation to finish (0.35s) before navigating
+      // Wait for animation to finish (0.5s) before navigating
       setTimeout(() => {
         window.location.href = href;
-      }, 350); 
+      }, 500); 
     });
   });
 });
