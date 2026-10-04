@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,13 +15,14 @@
   <link rel="icon" type="image/svg+xml" href="../img/AO-logo.svg" />
   <!-- Prevent Dark Mode FOUC -->
   <script>
-    (function() {
+    (function () {
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       const isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
       if (isDark) { document.documentElement.setAttribute('data-theme', 'dark'); }
     })();
   </script>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="container flex justify-between items-center">
@@ -30,17 +32,25 @@
         <a href="../project/index.html" class="nav-link">Projects</a>
         <a href="index.html" class="nav-link active">Persona</a>
       </div>
-            <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
+      <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
         <div class="lang-selector" style="position: relative;">
-          <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
+          <button id="lang-btn" class="btn btn-outline"
+            style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;"
+            aria-label="Change Language">
             <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
           </button>
-          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
-            <a href="#" class="nav-link active" style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
-            <a href="#" class="nav-link text-tertiary" style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;" onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
+          <div id="lang-menu" class="card shadow-solid"
+            style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+            <a href="#" class="nav-link active"
+              style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
+            <a href="#" class="nav-link text-tertiary"
+              style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;"
+              onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
           </div>
         </div>
-        <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
+        <button id="theme-toggle" class="btn btn-outline"
+          style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;"
+          aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
       </div>
@@ -54,16 +64,18 @@
     </p>
 
     <!-- PERFECT GRID FOR OFF-DUTY -->
-    
-    
-    
+
+
+
     <div class="grid md:grid-cols-2 gap-8 text-left items-stretch">
-      
+
       <!-- LEFT COLUMN -->
       <div class="flex flex-col gap-8 w-full h-full">
         <!-- CULTURE FIT -->
         <div class="card gap-4">
-          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">CULTURE FIT</h2>
+          <h2 class="font-display"
+            style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">CULTURE
+            FIT</h2>
           <div class="grid grid-cols-2 gap-4">
             <div>
               <h3 class="font-bold mb-1 text-sm">MBTI Type</h3>
@@ -90,127 +102,221 @@
 
         <!-- AUDIO LOGS -->
         <div class="card gap-4 flex-1">
-          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">AUDIO LOGS</h2>
-          <p class="text-secondary mb-2">Atmospheric playlists curated for deep focus during model training sessions.</p>
+          <h2 class="font-display"
+            style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">AUDIO LOGS
+          </h2>
+          <p class="text-secondary mb-2">Atmospheric playlists curated for deep focus during model training sessions.
+          </p>
           <ul style="list-style-type: none; padding: 0;" class="flex flex-col gap-3">
-            <li>> <a href="https://open.spotify.com/playlist/6mZDThXiUq5Eo7tAWcUEvW?si=ccb94fec96d74134" target="_blank" class="font-bold underline hover-glow" data-tooltip="Sweet euphoria melting into a bittersweet tang, a velvet collision of fleeting highs and quiet goodbyes.">Blueberry Cheesecake</a></li>
-            <li>> <a href="https://open.spotify.com/playlist/5dxWhbv5Egq39CqkONp5rh?si=ad27c97214d44b50" target="_blank" class="font-bold underline hover-glow" data-tooltip="Where bitter meets smooth, capturing the electric sensation of stepping into a cinematic edit.">Cassis Affogato</a></li>
-            <li>> <a href="https://open.spotify.com/playlist/7meEffakruv51EDBHAuNuX?si=89cb875be1894065" target="_blank" class="font-bold underline hover-glow" data-tooltip="Crisp layers meeting vibrant rhythms, a bouncy fusion fueled by endless late-night energy.">Apple Strudel</a></li>
+            <li>> <a href="https://open.spotify.com/playlist/6mZDThXiUq5Eo7tAWcUEvW?si=ccb94fec96d74134" target="_blank"
+                class="font-bold underline hover-glow"
+                data-tooltip="Sweet euphoria melting into a bittersweet tang, a velvet collision of fleeting highs and quiet goodbyes.">Blueberry
+                Cheesecake</a></li>
+            <li>> <a href="https://open.spotify.com/playlist/5dxWhbv5Egq39CqkONp5rh?si=ad27c97214d44b50" target="_blank"
+                class="font-bold underline hover-glow"
+                data-tooltip="Where bitter meets smooth, capturing the electric sensation of stepping into a cinematic edit.">Cassis
+                Affogato</a></li>
+            <li>> <a href="https://open.spotify.com/playlist/7meEffakruv51EDBHAuNuX?si=89cb875be1894065" target="_blank"
+                class="font-bold underline hover-glow"
+                data-tooltip="Crisp layers meeting vibrant rhythms, a bouncy fusion fueled by endless late-night energy.">Apple
+                Strudel</a></li>
           </ul>
         </div>
       </div>
 
       <!-- RIGHT COLUMN -->
-      <div class="flex flex-col gap-8 w-full h-full">
-        <!-- RADAR CHART (STATIC CARD) -->
-        <div class="card-static gap-4 flex flex-col items-center h-full">
-          <h2 class="font-display w-full" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem; text-align: left;">MULTIDIMENSIONAL PROFILING</h2>
-          <p class="text-secondary w-full text-left" style="margin-bottom: 0.5rem; font-size: 0.9rem;">Aggregated psychographic telemetry derived from MBTI (INFJ-T), Enneagram (5w4/5w6), and Wizarding World heuristics. Hover over nodes for logs.</p>
-          <div style="width: 100%; max-width: 400px; margin-top: auto; margin-bottom: auto;">
-            
-    <svg width="100%" height="100%" viewBox="-120 -50 540 400" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
-        <!-- Background Grid -->
-        <polygon points="150.0,128.0 169.1,139.0 169.1,161.0 150.0,172.0 130.9,161.0 130.9,139.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,106.0 188.1,128.0 188.1,172.0 150.0,194.0 111.9,172.0 111.9,128.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,84.0 207.2,117.0 207.2,183.0 150.0,216.0 92.8,183.0 92.8,117.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,62.0 226.2,106.0 226.2,194.0 150.0,238.0 73.8,194.0 73.8,106.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/><polygon points="150.0,40.0 245.3,95.0 245.3,205.0 150.0,260.0 54.7,205.0 54.7,95.0" fill="none" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/>
-        <line x1="150.0" y1="150.0" x2="150.0" y2="40.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="245.3" y2="95.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="245.3" y2="205.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="150.0" y2="260.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="54.7" y2="205.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/><line x1="150.0" y1="150.0" x2="54.7" y2="95.0" stroke="var(--border-strong)" stroke-width="1" opacity="0.3"/>
-        
-        <!-- Thick outline polygon (Dynamic Z-Shape) -->
-        <polygon points="150,72 184,131 222,192 150,218 118,169 88,114" 
-                 fill="var(--accent-primary)" fill-opacity="0.3" 
-                 stroke="var(--accent-primary)" stroke-width="3" stroke-opacity="1" 
-                 stroke-linejoin="round"
-                 style="pointer-events: none;"/>
-        
-        <!-- Nodes -->
-        <circle cx="150" cy="72" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="INTROVERSION (78%): Synthesized from MBTI Introvert (63%) + Enneagram 5 core isolation."></circle>
-        <circle cx="184" cy="131" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="SPONTANEITY (39%): MBTI Prospecting (39%). Dislikes sudden disruptions to structured plans."></circle>
-        <circle cx="222" cy="192" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="AMBITION (83%): Slytherin core trait. High drive to optimize resources and achieve targets."></circle>
-        <circle cx="150" cy="218" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="VIGILANCE (68%): MBTI Turbulent (58%) + 5w6. Constant monitoring of systems and potential risks."></circle>
-        <circle cx="118" cy="169" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="SOCIABILITY (37%): MBTI Extravert (37%). Rapid social battery drain in unfamiliar environments."></circle>
-        <circle cx="88" cy="114" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2" style="cursor: help;" data-tooltip="IMAGINATION (72%): MBTI Intuitive (58%) + 5w4. High capacity for abstract concepts and vision."></circle>
-        
-        <!-- Text Labels -->
-        <text x="150.0" y="10.0" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="middle" style="cursor: help;" data-tooltip="Synthesized from MBTI Introvert (63%) + Enneagram 5 core isolation.">INTROVERSION (78%)</text>
-        <text x="210.0" y="106.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="start" style="cursor: help;" data-tooltip="MBTI Prospecting (39%). Dislikes sudden disruptions to structured plans.">SPONTANEITY (39%)</text>
-        <text x="260.0" y="221.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="start" style="cursor: help;" data-tooltip="Slytherin core trait. High drive to optimize resources and achieve targets.">AMBITION (83%)</text>
-        <text x="150.0" y="295.0" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="middle" style="cursor: help;" data-tooltip="MBTI Turbulent (58%) + 5w6. Constant monitoring of systems and potential risks.">VIGILANCE (68%)</text>
-        <text x="90.0" y="221.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="end" style="cursor: help;" data-tooltip="MBTI Extravert (37%). Rapid social battery drain in unfamiliar environments.">SOCIABILITY (37%)</text>
-        <text x="30.0" y="106.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)" text-anchor="end" style="cursor: help;" data-tooltip="MBTI Intuitive (58%) + 5w4. High capacity for abstract concepts and vision.">IMAGINATION (72%)</text>
-    </svg>
-    
-          </div>
+      <!-- RADAR CHART (STATIC CARD) -->
+      <div class="card-static gap-4 flex flex-col items-center w-full h-full">
+        <h2 class="font-display w-full"
+          style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem; text-align: left;">
+          MULTIDIMENSIONAL PROFILING</h2>
+        <p class="text-secondary w-full text-left" style="margin-bottom: 0.5rem; font-size: 0.9rem;">Aggregated
+          psychographic telemetry derived from MBTI (INFJ-T), Enneagram (5w4/5w6), and Wizarding World heuristics. Hover
+          over nodes for logs.</p>
+        <div style="width: 100%; max-width: 550px; margin-top: auto; margin-bottom: auto;">
+
+          <svg width="100%" height="100%" viewBox="-120 -50 540 400" xmlns="http://www.w3.org/2000/svg"
+            style="overflow: visible;">
+            <!-- Background Grid -->
+            <polygon points="150.0,128.0 169.1,139.0 169.1,161.0 150.0,172.0 130.9,161.0 130.9,139.0" fill="none"
+              stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+            <polygon points="150.0,106.0 188.1,128.0 188.1,172.0 150.0,194.0 111.9,172.0 111.9,128.0" fill="none"
+              stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+            <polygon points="150.0,84.0 207.2,117.0 207.2,183.0 150.0,216.0 92.8,183.0 92.8,117.0" fill="none"
+              stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+            <polygon points="150.0,62.0 226.2,106.0 226.2,194.0 150.0,238.0 73.8,194.0 73.8,106.0" fill="none"
+              stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+            <polygon points="150.0,40.0 245.3,95.0 245.3,205.0 150.0,260.0 54.7,205.0 54.7,95.0" fill="none"
+              stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2,2" opacity="0.3" />
+            <line x1="150.0" y1="150.0" x2="150.0" y2="40.0" stroke="var(--border-strong)" stroke-width="1"
+              opacity="0.3" />
+            <line x1="150.0" y1="150.0" x2="245.3" y2="95.0" stroke="var(--border-strong)" stroke-width="1"
+              opacity="0.3" />
+            <line x1="150.0" y1="150.0" x2="245.3" y2="205.0" stroke="var(--border-strong)" stroke-width="1"
+              opacity="0.3" />
+            <line x1="150.0" y1="150.0" x2="150.0" y2="260.0" stroke="var(--border-strong)" stroke-width="1"
+              opacity="0.3" />
+            <line x1="150.0" y1="150.0" x2="54.7" y2="205.0" stroke="var(--border-strong)" stroke-width="1"
+              opacity="0.3" />
+            <line x1="150.0" y1="150.0" x2="54.7" y2="95.0" stroke="var(--border-strong)" stroke-width="1"
+              opacity="0.3" />
+
+            <!-- Thick outline polygon (Dynamic Z-Shape) -->
+            <polygon points="150,72 184,131 222,192 150,218 118,169 88,114" fill="var(--accent-primary)"
+              fill-opacity="0.3" stroke="var(--accent-primary)" stroke-width="3" stroke-opacity="1"
+              stroke-linejoin="round" style="pointer-events: none;" />
+
+            <!-- Nodes -->
+            <circle cx="150" cy="72" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2"
+              style="cursor: help;"
+              data-tooltip="INTROVERSION (78%): Synthesized from MBTI Introvert (63%) + Enneagram 5 core isolation.">
+            </circle>
+            <circle cx="184" cy="131" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2"
+              style="cursor: help;"
+              data-tooltip="SPONTANEITY (39%): MBTI Prospecting (39%). Dislikes sudden disruptions to structured plans.">
+            </circle>
+            <circle cx="222" cy="192" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2"
+              style="cursor: help;"
+              data-tooltip="AMBITION (83%): Slytherin core trait. High drive to optimize resources and achieve targets.">
+            </circle>
+            <circle cx="150" cy="218" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2"
+              style="cursor: help;"
+              data-tooltip="VIGILANCE (68%): MBTI Turbulent (58%) + 5w6. Constant monitoring of systems and potential risks.">
+            </circle>
+            <circle cx="118" cy="169" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2"
+              style="cursor: help;"
+              data-tooltip="SOCIABILITY (37%): MBTI Extravert (37%). Rapid social battery drain in unfamiliar environments.">
+            </circle>
+            <circle cx="88" cy="114" r="6" fill="var(--bg-surface)" stroke="var(--accent-primary)" stroke-width="2"
+              style="cursor: help;"
+              data-tooltip="IMAGINATION (72%): MBTI Intuitive (58%) + 5w4. High capacity for abstract concepts and vision.">
+            </circle>
+
+            <!-- Text Labels -->
+            <text x="150.0" y="10.0" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)"
+              text-anchor="middle" style="cursor: help;"
+              data-tooltip="Synthesized from MBTI Introvert (63%) + Enneagram 5 core isolation.">INTROVERSION
+              (78%)</text>
+            <text x="210.0" y="106.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)"
+              text-anchor="start" style="cursor: help;"
+              data-tooltip="MBTI Prospecting (39%). Dislikes sudden disruptions to structured plans.">SPONTANEITY
+              (39%)</text>
+            <text x="260.0" y="221.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)"
+              text-anchor="start" style="cursor: help;"
+              data-tooltip="Slytherin core trait. High drive to optimize resources and achieve targets.">AMBITION
+              (83%)</text>
+            <text x="150.0" y="295.0" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)"
+              text-anchor="middle" style="cursor: help;"
+              data-tooltip="MBTI Turbulent (58%) + 5w6. Constant monitoring of systems and potential risks.">VIGILANCE
+              (68%)</text>
+            <text x="90.0" y="221.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)"
+              text-anchor="end" style="cursor: help;"
+              data-tooltip="MBTI Extravert (37%). Rapid social battery drain in unfamiliar environments.">SOCIABILITY
+              (37%)</text>
+            <text x="30.0" y="106.5" fill="var(--text-secondary)" font-size="11" font-family="var(--font-mono)"
+              text-anchor="end" style="cursor: help;"
+              data-tooltip="MBTI Intuitive (58%) + 5w4. High capacity for abstract concepts and vision.">IMAGINATION
+              (72%)</text>
+          </svg>
+
         </div>
       </div>
 
       <!-- REPOSITORIES OF LEISURE (Spanning Both Columns) -->
       <div class="md:col-span-2">
         <div class="card-static gap-4 flex flex-col">
-          <h2 class="font-display" style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">REPOSITORIES OF LEISURE</h2>
+          <h2 class="font-display"
+            style="font-size: 1.5rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">
+            REPOSITORIES OF LEISURE</h2>
           <p class="text-secondary mb-2">Archived multimedia artifacts and computational simulations.</p>
-          
+
           <div class="grid md:grid-cols-2 gap-8">
-            
+
             <!-- LETTERBOXD (FILMS) -->
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
+              <div class="flex items-center justify-between"
+                style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
                 <h3 class="font-bold flex items-center gap-2">
-                  <img src="https://cdn.simpleicons.org/letterboxd/white" alt="Letterboxd Logo" style="width: 16px; height: 16px;" />
+                  <img src="https://cdn.simpleicons.org/letterboxd/white" alt="Letterboxd Logo"
+                    style="width: 16px; height: 16px;" />
                   Letterboxd Top 4
                 </h3>
-                <a href="https://letterboxd.com/Bejochan/" target="_blank" class="badge hover:bg-white hover:text-black">@Bejochan</a>
+                <a href="https://letterboxd.com/Bejochan/" target="_blank"
+                  class="badge hover:bg-white hover:text-black">@Bejochan</a>
               </div>
               <div class="grid grid-cols-2 gap-4">
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/sore.png" alt="SORE" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/sore.png" alt="SORE" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="SORE: Istri dari Masa Depan">SORE: Istri dari Masa Depan</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="SORE: Istri dari Masa Depan">SORE: Istri dari Masa Depan</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2025</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Romance</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://letterboxd.com/film/sore-a-wife-from-the-future/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 3.9/5</a>
+                      <a href="https://letterboxd.com/film/sore-a-wife-from-the-future/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 3.9/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">Yandy Laurens</span>
                     </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/silent_voice.png" alt="A Silent Voice" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/silent_voice.png" alt="A Silent Voice" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="A Silent Voice">A Silent Voice</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="A Silent Voice">A Silent Voice</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2016</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Drama</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://letterboxd.com/film/a-silent-voice-the-movie/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 4.2/5</a>
+                      <a href="https://letterboxd.com/film/a-silent-voice-the-movie/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 4.2/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">Naoko Yamada</span>
                     </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/basterds.png" alt="Inglourious Basterds" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/basterds.png" alt="Inglourious Basterds" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Inglourious Basterds">Inglourious Basterds</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="Inglourious Basterds">Inglourious Basterds</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2009</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">War</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://letterboxd.com/film/inglourious-basterds/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 4.4/5</a>
+                      <a href="https://letterboxd.com/film/inglourious-basterds/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 4.4/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">Quentin Tarantino</span>
                     </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/suicide_squad.jpg" alt="The Suicide Squad" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/suicide_squad.jpg" alt="The Suicide Squad" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="The Suicide Squad">The Suicide Squad</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="The Suicide Squad">The Suicide Squad</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2021</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Action</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://letterboxd.com/film/the-suicide-squad/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 3.5/5</a>
+                      <a href="https://letterboxd.com/film/the-suicide-squad/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 3.5/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">James Gunn</span>
                     </div>
                   </div>
@@ -220,9 +326,11 @@
 
             <!-- BACKLOGGD (GAMES) -->
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between" style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
+              <div class="flex items-center justify-between"
+                style="border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.5rem;">
                 <h3 class="font-bold flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="6" x2="10" y1="12" y2="12"></line>
                     <line x1="8" x2="8" y1="10" y2="14"></line>
                     <line x1="15" x2="15.01" y1="13" y2="13"></line>
@@ -231,82 +339,111 @@
                   </svg>
                   Backloggd Top 4
                 </h3>
-                <a href="https://backloggd.com/u/Bejo/" target="_blank" class="badge hover:bg-white hover:text-black">@Bejo</a>
+                <a href="https://backloggd.com/u/Bejo/" target="_blank"
+                  class="badge hover:bg-white hover:text-black">@Bejo</a>
               </div>
               <div class="grid grid-cols-2 gap-4">
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/dissidia.png" alt="Dissidia" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/dissidia.png" alt="Dissidia" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Dissidia Final Fantasy">Dissidia Final Fantasy</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="Dissidia Final Fantasy">Dissidia Final Fantasy</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2008</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">Fighter</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://backloggd.com/games/dissidia-final-fantasy/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 3.8/5</a>
+                      <a href="https://backloggd.com/games/dissidia-final-fantasy/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 3.8/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">Square Enix</span>
                     </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/bg3.jpg" alt="Baldur's Gate 3" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/bg3.jpg" alt="Baldur's Gate 3" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Baldur's Gate 3">Baldur's Gate 3</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="Baldur's Gate 3">Baldur's Gate 3</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2023</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">CRPG</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://backloggd.com/games/baldurs-gate-iii/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 4.6/5</a>
+                      <a href="https://backloggd.com/games/baldurs-gate-iii/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 4.6/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">Larian Studios</span>
                     </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/elden_ring.png" alt="Elden Ring" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/elden_ring.png" alt="Elden Ring" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Elden Ring">Elden Ring</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="Elden Ring">Elden Ring</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2022</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">RPG</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://backloggd.com/games/elden-ring/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 4.6/5</a>
+                      <a href="https://backloggd.com/games/elden-ring/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 4.6/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">FromSoftware</span>
                     </div>
                   </div>
                 </div>
                 <div class="card p-0 overflow-hidden" style="padding: 0; box-shadow: 3px 3px 0px var(--border-strong);">
-                  <img src="../img/leisure/persona5.png" alt="Persona 5 Royal" class="leisure-poster" style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
+                  <img src="../img/leisure/persona5.png" alt="Persona 5 Royal" class="leisure-poster"
+                    style="width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(100%) contrast(120%); border-bottom: 2px solid var(--border-strong); transition: filter 0.3s ease;">
                   <div style="padding: 0.75rem;">
-                    <p class="font-bold text-sm" style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Persona 5 Royal">Persona 5 Royal</p>
+                    <p class="font-bold text-sm"
+                      style="line-height: 1.2; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                      title="Persona 5 Royal">Persona 5 Royal</p>
                     <div class="flex flex-wrap gap-1 mb-1">
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">2019</span>
                       <span class="badge" style="font-size: 0.6rem; padding: 0.15rem 0.3rem;">JRPG</span>
                     </div>
                     <div class="flex items-center justify-between mt-1">
-                      <a href="https://backloggd.com/games/persona-5-royal/" target="_blank" class="font-mono font-bold hover:text-primary transition-colors" style="font-size: 0.75rem; text-decoration: none;">★ 4.5/5</a>
+                      <a href="https://backloggd.com/games/persona-5-royal/" target="_blank"
+                        class="font-mono font-bold hover:text-primary transition-colors"
+                        style="font-size: 0.75rem; text-decoration: none;">★ 4.5/5</a>
                       <span class="font-mono text-secondary" style="font-size: 0.65rem;">Atlus</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
+
           </div>
 
           <!-- OTHER LINKS -->
           <div class="flex flex-wrap gap-4 pt-2" style="border-top: 1px dashed var(--border-subtle);">
-            <a href="https://steamcommunity.com/profiles/76561198847624087/" target="_blank" class="btn btn-outline flex items-center justify-center gap-2" style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
+            <a href="https://steamcommunity.com/profiles/76561198847624087/" target="_blank"
+              class="btn btn-outline flex items-center justify-center gap-2"
+              style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
               <img src="https://cdn.simpleicons.org/steam/white" alt="Steam Logo" style="width: 14px; height: 14px;" />
               Steam
             </a>
-            <a href="https://www.goodreads.com/user/show/182595097-bejo" target="_blank" class="btn btn-outline flex items-center justify-center gap-2" style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
-              <img src="https://cdn.simpleicons.org/goodreads/white" alt="Goodreads Logo" style="width: 14px; height: 14px;" />
+            <a href="https://www.goodreads.com/user/show/182595097-bejo" target="_blank"
+              class="btn btn-outline flex items-center justify-center gap-2"
+              style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
+              <img src="https://cdn.simpleicons.org/goodreads/white" alt="Goodreads Logo"
+                style="width: 14px; height: 14px;" />
               Goodreads
             </a>
-            <a href="https://www.instagram.com/adnan._oktar/" target="_blank" class="btn btn-outline flex items-center justify-center gap-2" style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
-              <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram Logo" style="width: 14px; height: 14px;" />
+            <a href="https://www.instagram.com/adnan._oktar/" target="_blank"
+              class="btn btn-outline flex items-center justify-center gap-2"
+              style="flex: 1; font-size: 0.75rem; padding: 0.5rem;">
+              <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram Logo"
+                style="width: 14px; height: 14px;" />
               Instagram
             </a>
           </div>
@@ -319,12 +456,14 @@
 
 
 
-  
+
   <script src="../js/core.js"></script>
   <footer style="margin-top: 4rem; border-top: 2px solid var(--border-strong); padding: 2rem 0; text-align: center;">
     <div class="container">
-      <p class="font-mono text-secondary" style="font-size: 0.85rem;">INITIALIZED 2026. ALL WEIGHTS CONVERGED. // &copy; ADNAN OKTAR.</p>
+      <p class="font-mono text-secondary" style="font-size: 0.85rem;">INITIALIZED 2026. ALL WEIGHTS CONVERGED. // &copy;
+        ADNAN OKTAR.</p>
     </div>
   </footer>
 </body>
+
 </html>
