@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -39,7 +39,7 @@
   </nav>
 
   <main class="container section">
-    <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">← Back to Projects</a>
+    <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">â† Back to Projects</a>
     
     <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">REGOKEMON</h1>
     <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Multimodal Computer Vision, Vector Database Search & Real-Time Price Ingestion</p>
@@ -95,7 +95,7 @@
           
           <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
           <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li><strong>Camera Frame Preprocessing:</strong> OpenCV (cv2) captures webcam or uploaded frames, applies Laplacian variance blur detection, and performs 4-way auto-orientation (0°, 90°, 180°, 270°).</li>
+            <li><strong>Camera Frame Preprocessing:</strong> OpenCV (cv2) captures webcam or uploaded frames, applies Laplacian variance blur detection, and performs 4-way auto-orientation (0Â°, 90Â°, 180Â°, 270Â°).</li>
             <li><strong>Dense Vector Embedding:</strong> Images are converted into 512-dimensional embeddings using OpenAI CLIP (ViT-B/32).</li>
             <li><strong>Sub-millisecond Vector Retrieval:</strong> FAISS <code>IndexFlatIP</code> (Cosine Similarity) retrieves candidate matches from 20,400+ pre-indexed card vectors in < 200 ms.</li>
             <li><strong>Fine-Grained ORB Re-Ranking:</strong> Expands candidate pool from 50 to 150 items (Commit <code>7707151</code>), using ORB feature keypoint matching and RANSAC homography estimation to discriminate holo-foil patterns.</li>
@@ -120,5 +120,10 @@
     </div>
   </main>
   <script src="../../js/core.js"></script>
+  <footer style="margin-top: 4rem; border-top: 2px solid var(--border-strong); padding: 2rem 0; text-align: center;">
+    <div class="container">
+      <p class="font-mono text-secondary" style="font-size: 0.85rem;">INITIALIZED 2026. ALL WEIGHTS CONVERGED. // &copy; ADNAN OKTAR.</p>
+    </div>
+  </footer>
 </body>
 </html>
