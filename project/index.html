@@ -21,7 +21,16 @@
         <a href="index.html" class="nav-link active">Projects</a>
         <a href="../persona/index.html" class="nav-link">Persona</a>
       </div>
-      <div class="nav-links">
+            <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
+        <div class="lang-selector" style="position: relative;">
+          <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
+            <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
+          </button>
+          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+            <a href="#" class="nav-link active" style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
+            <a href="#" class="nav-link text-tertiary" style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;" onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
+          </div>
+        </div>
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>

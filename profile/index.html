@@ -21,7 +21,16 @@
         <a href="../project/index.html" class="nav-link">Projects</a>
         <a href="../persona/index.html" class="nav-link">Persona</a>
       </div>
-      <div class="nav-links">
+            <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
+        <div class="lang-selector" style="position: relative;">
+          <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
+            <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
+          </button>
+          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+            <a href="#" class="nav-link active" style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
+            <a href="#" class="nav-link text-tertiary" style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;" onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
+          </div>
+        </div>
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
@@ -29,14 +38,13 @@
     </div>
   </nav>
 
-  <main class="container section">
+  <main class="container">
     
-    <!-- Hero Section (Photo + Bio) -->
-    <div class="grid md:grid-cols-2 gap-8" style="min-height: calc(100vh - 160px); align-items: center; margin-bottom: 4rem;">
-      <!-- PHOTO PLACEHOLDER -->
-      <div style="border: 2px solid var(--border-strong); padding: 1rem; text-align: center; aspect-ratio: 3/4; max-width: 380px; width: 100%; justify-self: center; display: flex; align-items: center; justify-content: center;">
-        <span class="text-secondary font-mono">[ FOTO PROFIL (PORTRAIT) ]</span>
-        <!-- <img src="../img/foto-profil.jpg" alt="Adnan Oktar" style="width: 100%; height: 100%; object-fit: cover;" /> -->
+    <!-- Hero Section -->
+    <div id="profile-hero" class="grid md:grid-cols-2 gap-8" style="min-height: calc(100vh - 80px); align-items: center; margin-bottom: 0; padding-top: 2rem; padding-bottom: 2rem;">
+      <!-- PHOTO -->
+      <div style="border: 2px solid var(--border-strong); padding: 1rem; aspect-ratio: 3/4; max-width: 380px; width: 100%; justify-self: center; display: flex; align-items: center; justify-content: center; background: var(--bg-surface);">
+        <img src="../img/Profile_Photo.jpg" alt="Adnan Oktar" style="width: 100%; height: 100%; object-fit: cover; border: 1px solid var(--border-light);" />
       </div>
       
       <!-- BIO -->
@@ -46,14 +54,17 @@
         <p class="text-tertiary" style="margin-top: 1rem; font-size: 1.1rem; line-height: 1.6;">
           Undergraduate student at Politeknik Elektronika Negeri Surabaya (PENS) specializing in multimodal computer vision systems, resilient backend architectures, and data engineering. Actively seeking a Data Science internship starting January 2027.
         </p>
-        <div class="flex gap-4 mt-4">
-          <a href="#" class="btn btn-outline">Download CV (PDF)</a>
+        <div class="flex gap-4 mt-4" style="flex-wrap: wrap;">
+          <a href="../cv/index.html" class="btn btn-primary">View & Download CV</a>
+          <button id="reveal-btn" class="btn btn-outline" style="cursor: pointer;">
+            More Details <i class="ph-bold ph-caret-down" style="vertical-align: middle;"></i>
+          </button>
         </div>
       </div>
     </div>
-
+    
     <!-- 5-Card Brutalist Layout -->
-    <div class="grid md:grid-cols-2 gap-8" style="margin-bottom: 4rem;">
+    <div id="profile-details" class="grid md:grid-cols-2 gap-8" style="margin-top: 4rem; margin-bottom: 4rem; opacity: 0; max-height: 0; overflow: hidden; transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); transform: translateY(50px);">
       
       <!-- Card 1: Education (Top Left) -->
       <div class="card gap-4">
@@ -164,6 +175,49 @@
 
   </main>
   
+
   <script src="../js/core.js"></script>
+  <script>
+    const revealBtn = document.getElementById('reveal-btn');
+    const profileDetails = document.getElementById('profile-details');
+    let isRevealed = false;
+
+    // Initially lock scrolling on the body so user is forced to click
+    document.body.style.overflowY = 'hidden';
+
+    revealBtn.addEventListener('click', () => {
+      if (!isRevealed) {
+        // Reveal
+        profileDetails.style.maxHeight = '3000px'; // arbitrary large height
+        profileDetails.style.opacity = '1';
+        profileDetails.style.transform = 'translateY(0)';
+        document.body.style.overflowY = 'auto'; // unlock scrolling
+        
+        revealBtn.innerHTML = 'Hide Details <i class="ph-bold ph-caret-up" style="vertical-align: middle;"></i>';
+        isRevealed = true;
+
+        // Smooth scroll to details after a tiny delay to let transition start
+        setTimeout(() => {
+          profileDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else {
+        // Hide
+        profileDetails.style.maxHeight = '0';
+        profileDetails.style.opacity = '0';
+        profileDetails.style.transform = 'translateY(50px)';
+        
+        revealBtn.innerHTML = 'More Details <i class="ph-bold ph-caret-down" style="vertical-align: middle;"></i>';
+        isRevealed = false;
+
+        // Scroll back to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Lock scroll again after returning to top
+        setTimeout(() => {
+          document.body.style.overflowY = 'hidden';
+        }, 800); // match transition time roughly
+      }
+    });
+  </script>
 </body>
 </html>

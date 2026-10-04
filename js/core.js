@@ -101,3 +101,22 @@ window.addEventListener('load', () => {
     startTypewriter();
   }
 });
+
+// Language Dropdown Logic
+const langBtn = document.getElementById('lang-btn');
+const langMenu = document.getElementById('lang-menu');
+
+if (langBtn && langMenu) {
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent document click from firing immediately
+    const isVisible = langMenu.style.display === 'flex';
+    langMenu.style.display = isVisible ? 'none' : 'flex';
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.style.display = 'none';
+    }
+  });
+}

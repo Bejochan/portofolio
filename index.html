@@ -27,7 +27,16 @@
         <a href="project/index.html" class="nav-link">Projects</a>
         <a href="persona/index.html" class="nav-link">Persona</a>
       </div>
-      <div class="nav-links">
+            <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
+        <div class="lang-selector" style="position: relative;">
+          <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
+            <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
+          </button>
+          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+            <a href="#" class="nav-link active" style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
+            <a href="#" class="nav-link text-tertiary" style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;" onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
+          </div>
+        </div>
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
@@ -37,15 +46,16 @@
 
   <main class="container flex flex-col items-center justify-center text-center" style="min-height: calc(100vh - 80px); padding-top: 1rem; padding-bottom: 2rem;">
     <!-- Huge Logo with Drop Shadow Pop -->
-    <img src="img/AO-logo.svg" alt="AO Logo" class="glitch-hover" style="width: 250px; height: auto; margin-bottom: 1.5rem;" />
+    <img src="img/AO-logo.svg" alt="AO Logo" class="glitch-hover hero-logo-trigger" style="width: 250px; height: auto; margin-bottom: 1.5rem; position: relative; z-index: 10; cursor: crosshair;" />
     
-    <h1 class="font-display" style="font-size: 4rem; line-height: 1.1; margin-bottom: 1rem;">
+    <h1 class="font-display" style="font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; position: relative; z-index: 10;">
       Adnan Oktar
     </h1>
+    <img src="img/Hero_Photo_Cutout.png" alt="Adnan Oktar Hidden" class="hero-hidden-photo" />
     <h2 class="text-secondary" style="font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400;">
       <span id="typewriter" class="typewriter-text" data-text="Applied Data Scientist & ML Pipeline Engineer">&nbsp;</span>
     </h2>
-    <p class="text-tertiary" style="max-width: 600px; margin-bottom: 3rem; line-height: 1.6;">
+    <p class="text-tertiary" style="max-width: 600px; margin-bottom: 3rem; line-height: 1.6; position: relative; z-index: 10;">
       Applied Data Science undergraduate at PENS specializing in multimodal computer vision, resilient backend architectures, and high-availability machine learning pipelines. Building end-to-end intelligent data products.
     </p>
     
