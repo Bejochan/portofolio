@@ -10,10 +10,10 @@ function setTheme(dark) {
   isDark = dark;
   if (isDark) {
     root.setAttribute('data-theme', 'dark');
-    if(themeBtn) themeBtn.textContent = 'LIGHT [ ]';
+    if(themeBtn) themeBtn.innerHTML = '<i class="ph-fill ph-sun" style="font-size: 1.25rem; display: block;"></i>';
   } else {
     root.setAttribute('data-theme', 'light');
-    if(themeBtn) themeBtn.textContent = 'DARK [X]';
+    if(themeBtn) themeBtn.innerHTML = '<i class="ph-fill ph-moon" style="font-size: 1.25rem; display: block;"></i>';
   }
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
