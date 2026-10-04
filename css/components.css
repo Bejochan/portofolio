@@ -108,6 +108,11 @@
   background-color: var(--text-secondary) !important;
 }
 
+/* Mengembalikan warna poster dari hitam-putih menjadi berwarna penuh saat card di-hover */
+.card:hover .leisure-poster {
+  filter: grayscale(0%) contrast(100%) !important;
+}
+
 /* Brutalist Drop Shadow Effect */
 .glitch-hover {
   transition: transform 0.2s, filter 0.2s;
