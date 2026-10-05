@@ -192,7 +192,6 @@
   <script>
     const revealBtn = document.getElementById('reveal-btn');
     const profileDetails = document.getElementById('profile-details');
-    const profileFooter = document.getElementById('profile-footer');
     let isRevealed = false;
 
     // Lock scroll on Desktop
@@ -206,6 +205,7 @@
         profileDetails.style.maxHeight = '3000px'; // arbitrary large height
         profileDetails.style.opacity = '1';
         profileDetails.style.transform = 'translateY(0)';
+        const profileFooter = document.getElementById('profile-footer');
         if(profileFooter) profileFooter.style.display = 'block';
         document.body.style.overflowY = 'auto'; // Unlock scroll
         
@@ -223,6 +223,7 @@
         profileDetails.style.transform = 'translateY(50px)';
         
         revealBtn.innerHTML = 'More Details <i class="ph-bold ph-caret-down" style="vertical-align: middle;"></i>';
+        const profileFooter = document.getElementById('profile-footer');
         if(profileFooter) profileFooter.style.display = 'none';
         isRevealed = false;
 
