@@ -199,3 +199,21 @@ window.addEventListener("pageshow", function (event) {
     document.body.classList.remove('page-exit');
   }
 });
+
+
+// Mobile Hamburger Menu Logic
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mainNav = document.getElementById('main-nav');
+
+if (hamburgerBtn && mainNav) {
+hamburgerBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('mobile-active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!hamburgerBtn.contains(e.target) && !mainNav.contains(e.target)) {
+    mainNav.classList.remove('mobile-active');
+  }
+});
+}

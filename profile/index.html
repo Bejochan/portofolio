@@ -24,7 +24,7 @@
 <body>
   <nav class="navbar">
     <div class="container flex justify-between items-center">
-      <div class="nav-links">
+      <div class="nav-links" id="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link active">Profile</a>
         <a href="../project/index.html" class="nav-link">Projects</a>
@@ -43,6 +43,9 @@
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
+        <button id="hamburger-btn" class="btn btn-outline" style="padding: 0.5rem; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -58,7 +61,7 @@
       
       <!-- BIO -->
       <div class="flex flex-col gap-4">
-        <h1 class="font-display" style="font-size: 3rem; line-height: 1;">Adnan Oktar</h1>
+        <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1;">Adnan Oktar</h1>
         <p class="text-secondary font-mono">Applied Data Scientist & ML Pipeline Engineer</p>
         <p class="text-tertiary" style="margin-top: 1rem; font-size: 1.1rem; line-height: 1.6; text-align: justify;">
           Applied Data Science practitioner at Politeknik Elektronika Negeri Surabaya (PENS) focused on building production-grade machine learning pipelines, multimodal computer vision systems, and resilient cloud architectures. Dedicated to transforming raw algorithms into interactive, high-availability data products. Actively seeking a Data Science internship starting January 2027.

@@ -30,7 +30,7 @@
 
   <nav class="navbar">
     <div class="container flex justify-between items-center">
-      <div class="nav-links">
+      <div class="nav-links" id="main-nav">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="profile/index.html" class="nav-link">Profile</a>
         <a href="project/index.html" class="nav-link">Projects</a>
@@ -49,6 +49,9 @@
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
+        <button id="hamburger-btn" class="btn btn-outline" style="padding: 0.5rem; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -59,7 +62,7 @@
       <img src="img/AO-logo.svg" alt="AO Logo" style="width: 100%; height: auto; display: block;" />
     </div>
     
-    <h1 class="font-display" style="font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; position: relative; z-index: 10;">
+    <h1 class="font-display" style="font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; margin-bottom: 1rem; position: relative; z-index: 10;">
       Adnan Oktar
     </h1>
     <img src="img/Hero_Photo_Cutout.webp" alt="Adnan Oktar Hidden" class="hero-hidden-photo" />

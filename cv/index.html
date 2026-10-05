@@ -26,7 +26,7 @@
 <body>
   <nav class="navbar">
     <div class="container flex justify-between items-center">
-      <div class="nav-links">
+      <div class="nav-links" id="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="../profile/index.html" class="nav-link">Profile</a>
         <a href="../project/index.html" class="nav-link">Projects</a>
@@ -45,6 +45,9 @@
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
+        <button id="hamburger-btn" class="btn btn-outline" style="padding: 0.5rem; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -52,7 +55,7 @@
   <main class="container section">
     <a href="../profile/index.html" class="text-secondary font-mono hover-glow" style="margin-bottom: 2rem; display: inline-block; text-decoration: none;">&larr;  Back to Profile</a>
     <div class="mb-8 border-b pb-4" style="border-bottom: 2px solid var(--border-strong);">
-      <h1 class="font-display text-primary" style="font-size: 2.5rem; margin-bottom: 0.5rem;">CURRICULUM VITAE</h1>
+      <h1 class="font-display text-primary" style="font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 0.5rem;">CURRICULUM VITAE</h1>
       <p class="text-tertiary font-mono">Interactive Resume Preview</p>
     </div>
 

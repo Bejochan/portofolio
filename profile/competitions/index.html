@@ -22,7 +22,7 @@
 <body>
   <nav class="navbar">
     <div class="container flex justify-between items-center">
-      <div class="nav-links">
+      <div class="nav-links" id="main-nav">
         <a href="../../index.html" class="nav-link">Home</a>
         <a href="../index.html" class="nav-link active">Profile</a>
         <a href="../../project/index.html" class="nav-link">Projects</a>
@@ -41,6 +41,9 @@
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
+        <button id="hamburger-btn" class="btn btn-outline" style="padding: 0.5rem; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -48,7 +51,7 @@
   <main class="container section">
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">&larr; Back to Profile</a>
     
-    <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">RECORDS & CERTIFICATES</h1>
+    <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">RECORDS & CERTIFICATES</h1>
     <p class="text-secondary font-mono" style="margin-bottom: 3rem;">Complete record of competitions, training programs, and professional certifications.</p>
     
     <h2 class="font-display" style="font-size: 2rem; margin-bottom: 1.5rem; margin-top: 2rem;">COMPETITION RECORDS</h2>

@@ -1,4 +1,4 @@
-/* css/layout.css */
+﻿/* css/layout.css */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -9,6 +9,9 @@
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-4);
+  }
+  .section {
+    padding: var(--space-8) 0;
   }
 }
 

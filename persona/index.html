@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +26,7 @@
 <body>
   <nav class="navbar">
     <div class="container flex justify-between items-center">
-      <div class="nav-links">
+      <div class="nav-links" id="main-nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="../profile/index.html" class="nav-link">Profile</a>
         <a href="../project/index.html" class="nav-link">Projects</a>
@@ -53,12 +53,15 @@
           aria-label="Toggle Theme">
           <i class="ph-fill ph-moon"></i>
         </button>
+        <button id="hamburger-btn" class="btn btn-outline" style="padding: 0.5rem; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
       </div>
     </div>
   </nav>
 
   <main class="container section text-center">
-    <h1 class="font-display" style="font-size: 3rem; margin-bottom: 1rem;">Off-Duty Logs</h1>
+    <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Off-Duty Logs</h1>
     <p class="text-tertiary" style="margin-bottom: 3rem;">
       When I'm not architecting pipelines or fine-tuning models, this is where I log my human API requests.
     </p>
