@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adnan Oktar | COMPETITION RECORD</title>
+  
+  <!-- Icon Library: Phosphor Icons (Fluent Alternative) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <link rel="stylesheet" href="../../css/tokens.css?v=3" />
+  <link rel="stylesheet" href="../../css/base.css?v=3" />
+  <link rel="stylesheet" href="../../css/layout.css?v=3" />
+  <link rel="stylesheet" href="../../css/components.css?v=3" />
+  <link rel="stylesheet" href="../../css/animations.css?v=3" />
+  <link rel="icon" type="image/svg+xml" href="../../img/AO-logo.svg" />
+  <!-- Prevent Dark Mode FOUC -->
+  <script>
+    (function() {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
+      if (isDark) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <div class="nav-links" id="main-nav">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="../competitions/index.html" class="nav-link">Profile</a>
+        <a href="../../project/index.html" class="nav-link">Projects</a>
+        <a href="../../persona/index.html" class="nav-link">Persona</a>
+      </div>
+            <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
+        <div class="lang-selector" style="position: relative;">
+          <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
+            <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
+          </button>
+          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+            <a href="#" class="nav-link active" style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
+            <a href="#" class="nav-link text-tertiary" style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;" onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
+          </div>
+        </div>
+        <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
+          <i class="ph-fill ph-moon"></i>
+        </button>
+        <button id="hamburger-btn" class="btn btn-outline" style="padding: 0.5rem; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container section">
+    <a href="../competitions/index.html" class="text-secondary font-mono hover-glow" style="margin-bottom: 2rem; display: inline-block; text-decoration: none;">&larr;  Back to Competitions & Certs</a>
+    <div class="mb-8 border-b pb-4" style="border-bottom: 2px solid var(--border-strong);">
+      <h1 class="font-display text-primary" style="font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 0.5rem;">COMPETITION RECORD</h1>
+      <p class="text-tertiary font-mono">Gammafest Data Science Competition</p>
+    </div>
+
+    <!-- CV Layout -->
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      
+      <!-- Left: CV Preview (takes 2/3 space on desktop) -->
+      <div class="md:col-span-2">
+        <div class="card shadow-solid flex flex-col gap-4" style="padding: 1rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+          <img src="https://github.com/user-attachments/assets/3f9cea35-c8d8-4b7e-8468-f2435c356fd3" alt="Gammafest Data Science Competition" style="width: 100%; height: auto; display: block; border: 1px solid var(--border-light);" />
+        </div>
+      </div>
+
+      <!-- Right: Sticky Controls (takes 1/3 space on desktop) -->
+      <div style="position: sticky; top: 100px;">
+        <div class="card shadow-solid flex flex-col gap-4" style="padding: 1.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+          <h2 class="font-display" style="font-size: 1.25rem; border-bottom: 2px solid var(--border-strong); padding-bottom: 0.5rem;">ACTION PANEL</h2>
+          
+          <p class="text-secondary font-mono" style="font-size: 0.85rem; line-height: 1.5;">
+            Official participation record / certificate issued by Universitas Gadjah Mada (UGM).
+          </p>
+
+          <a href="https://github.com/user-attachments/assets/3f9cea35-c8d8-4b7e-8468-f2435c356fd3" target="_blank" class="btn btn-primary w-100" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
+            <i class="ph-bold ph-arrow-square-out" style="font-size: 1.25rem;"></i> Open in New Tab
+          </a>
+          
+          <a href="https://github.com/user-attachments/assets/3f9cea35-c8d8-4b7e-8468-f2435c356fd3" download="gammafest-certificate.jpg" class="btn btn-outline w-100" style="width: 100%; justify-content: center; display: flex; gap: 0.5rem;">
+            <i class="ph-bold ph-download-simple" style="font-size: 1.25rem;"></i> Download Image
+          </a>
+
+          <div style="margin-top: 1rem; padding-top: 1rem; border-top: 2px dashed var(--border-strong);">
+            <div class="flex items-center gap-2 text-tertiary font-mono" style="font-size: 0.75rem;">
+              <i class="ph-fill ph-check-circle" style="color: #27c93f;"></i> High-Res Image
+            </div>
+            <div class="flex items-center gap-2 text-tertiary font-mono" style="font-size: 0.75rem; margin-top: 0.25rem;">
+              <i class="ph-fill ph-check-circle" style="color: #27c93f;"></i> ATS-Friendly Text
+            </div>
+            <div class="flex items-center gap-2 text-tertiary font-mono" style="font-size: 0.75rem; margin-top: 0.25rem;">
+              <i class="ph-fill ph-check-circle" style="color: #27c93f;"></i> Clickable Links
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  
+  <script src="../../js/core.js"></script>
+  <footer style="margin-top: 4rem; border-top: 2px solid var(--border-strong); padding: 2rem 0; text-align: center;">
+    <div class="container">
+      <p class="font-mono text-secondary" style="font-size: 0.85rem;">INITIALIZED 2026. ALL WEIGHTS CONVERGED. // &copy; ADNAN OKTAR.</p>
+    </div>
+  </footer>
+</body>
+</html>
