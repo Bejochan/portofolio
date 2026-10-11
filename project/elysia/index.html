@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -54,7 +54,7 @@
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">&larr; Back to Projects</a>
     
     <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">ELYSIA</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Conversational AI, Psychographic Playstyle DNA & Cascading LLM Architecture</p>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Conversational Game Recommender & 6-Tier Cascading Failover Engine</p>
 
     <!-- Visuals -->
     <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
@@ -84,11 +84,11 @@
         <div class="flex flex-wrap gap-2 mt-2">
           <span class="badge">Python 3.10</span>
           <span class="badge">Google Gemini API</span>
-          <span class="badge">Flask (SSE)</span>
+          <span class="badge">Flask (SSE Streaming)</span>
           <span class="badge">NumPy</span>
           <span class="badge">Pandas</span>
           <span class="badge">Vanilla JS</span>
-          <span class="badge">SVG Math</span>
+
           <span class="badge">Render</span>
         </div>
 
@@ -116,16 +116,16 @@
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li>Intercepted HTTP 429 quota exhaustion with a 6-tier cascading failover engine, ensuring continuous uptime.</li>
-            <li>Built graceful degradation mode utilizing accumulated session DNA scores and friendly user messaging if all cloud tiers are unavailable.</li>
-            <li>Designed zero-dependency frontend streaming parser using ES6 <code>ReadableStream</code> with dynamic client-side SVG radar visualization.</li>
+            <li><strong>6-Tier Cascading Failover (Commit <code>9ed7315</code>):</strong> Architected an automated sequential fallback circuit breaker across 6 Gemini model endpoints to eliminate HTTP 429 quota exhaustion, featuring graceful degradation to session DNA vectors if all cloud tiers fail.</li>
+            <li><strong>Two-Stage Hybrid Retrieval Pipeline:</strong> Coupled Stage 1 mathematical matrix filtering (&lt; 50 ms pruning across 24,082 titles via NumPy Euclidean distance + Jaccard similarity) with Stage 2 Neural LLM validation strictly enforcing negative conversational constraints.</li>
+            <li><strong>Zero-Dependency Streaming UX:</strong> Implemented real-time token delivery via Flask Server-Sent Events (SSE) parsed natively via ES6 <code>ReadableStream</code>, coupled with real-time dynamic client-side SVG Playstyle DNA visualization.</li>
           </ul>
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li><strong>Failover Depth:</strong> 6-Tier Cascade Resilience</li>
-            <li><strong>Vector Retrieval Latency:</strong> < 50 ms across 24,082 games</li>
-            <li><strong>Curated Catalog:</strong> 24,082 games with live Steam IDR pricing</li>
+            <li><strong>Cloud Failover Depth:</strong> 6 Sequential Tiers (Cascading Gemini Fallback)</li>
+            <li><strong>Vector Pruning Latency:</strong> &lt; 50 ms across 24,082 titles (NumPy matrices)</li>
+            <li><strong>Catalog Search Scale:</strong> 24,082 Titles with Live Steam IDR Pricing</li>
           </ul>
         </div>
       </div>

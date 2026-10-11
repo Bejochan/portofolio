@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -54,7 +54,7 @@
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">&larr; Back to Projects</a>
     
     <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">VibePlay</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Hybrid Content-Based Filtering, Resilient Checkpoint Scraping & Data Sanitization</p>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Interactive Game Recommender & Checkpoint-Persisted Ingestion Pipeline</p>
 
     <!-- Visuals -->
     <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
@@ -90,7 +90,7 @@
           <span class="badge">Vanilla JS</span>
           <span class="badge">Chart.js</span>
           <span class="badge">Vercel</span>
-          <span class="badge">Render</span>
+
         </div>
 
         <h3 class="font-bold mt-6">Links</h3>
@@ -111,22 +111,22 @@
             <li><strong>Fault-Tolerant Checkpoint Web Scraper:</strong> <code>fetch_data.py</code> auto-saves progress to <code>progress_temp.csv</code> every 50 games wrapped in <code>try...finally</code> blocks to prevent data loss.</li>
             <li><strong>Automated Data Sanitization:</strong> <code>filter_prices.py</code> applies multi-layer regex pipelines to eliminate NSFW titles, reconcile irregular price formats, and map real Steam IDR currency data.</li>
             <li><strong>Psychographic 12-Item Questionnaire:</strong> Evaluates player tendencies along Casual/Hardcore, Simple/Complex, and Calming/Adrenaline dimensions.</li>
-            <li><strong>Mood-Adjusted DNA:</strong> Dynamically shifts baseline DNA coordinates by 15%â€“35% based on momentary mood selections.</li>
+            <li><strong>Mood-Adjusted DNA:</strong> Dynamically shifts baseline DNA coordinates by 15%–35% based on momentary mood selections.</li>
             <li><strong>Dual-Session Recommendation Engine:</strong> Computes Balanced Match and High-Rating Priority recommendations visualized via an interactive 6-axis psychographic polygon radar chart.</li>
           </ol>
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li>Prevented scraping failure and data loss across 24,082 games with automated checkpoint flushing.</li>
-            <li>Implemented weighted hybrid recommendation algorithms balancing genre overlap, DNA distance, and budget limits.</li>
-            <li>Developed an interactive 6-axis psychographic polygon radar chart visualizing multidimensional playstyle compatibility and dynamic mood vectors.</li>
+            <li><strong>Checkpoint-Persisted Ingestion Pipeline:</strong> Engineered an unattended scraping workflow auto-flushing batch state every 50 games to <code>progress_temp.csv</code>, guaranteeing zero data loss across 24,082 titles under aggressive public API rate throttling.</li>
+            <li><strong>Multi-Layer Data Sanitization:</strong> Built automated filtering modules removing NSFW titles and regex pipelines converting messy multi-source pricing feeds into clean, verified Steam IDR currency integers.</li>
+            <li><strong>Interactive 6-Axis Psychographic Radar:</strong> Designed a multidimensional hybrid recommendation algorithm visualized on an interactive 6-axis polygon radar chart, enabling real-time inspection of Balanced vs. High-Rating recommendation modes.</li>
           </ul>
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li><strong>Catalog Scale:</strong> 24,082 Curated Games</li>
-            <li><strong>Checkpoint Resilience:</strong> 50-item auto-flush (Zero data loss)</li>
-            <li><strong>Dimensionality:</strong> 6-Axis Psychographic Polygon Radar Profiling</li>
+            <li><strong>Curated Game Corpus:</strong> 24,082 Clean Titles with Live Steam IDR Currency</li>
+            <li><strong>Scraper Checkpoint Cadence:</strong> 50-Item Auto-Flush (Zero Memory Loss)</li>
+            <li><strong>Psychographic Polygon Radar:</strong> 6 Independent Axes (15%–35% Dynamic Mood Shifting)</li>
           </ul>
         </div>
       </div>

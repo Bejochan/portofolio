@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -63,13 +63,14 @@
         </div>
         <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">REGOKEMON</h3>
         <div class="flex flex-wrap gap-2">
+          <span class="badge">Python</span>
           <span class="badge">OpenAI CLIP</span>
-          <span class="badge">FAISS</span>
+          <span class="badge">FAISS (CUDA)</span>
           <span class="badge">OpenCV</span>
           <span class="badge">Supabase</span>
         </div>
         <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Multimodal visual retrieval & card valuation engine. Implemented OpenAI CLIP ViT-B-32 with FAISS cosine similarity across 20,400+ cards, featuring ORB keypoint re-ranking and 4-way auto-orientation.
+          Multimodal visual retrieval and automated card valuation engine. Implemented OpenAI CLIP (ViT-B/32) with FAISS cosine similarity (&lt; 200 ms GPU latency across 20,400+ cards), fine-grained ORB re-ranking, and automated daily price ingestion cron.
         </p>
         <div class="flex gap-4 mt-4">
           <a href="regokemon/index.html" class="btn btn-primary">View Details</a>
@@ -87,10 +88,11 @@
           <span class="badge">Python</span>
           <span class="badge">APScheduler</span>
           <span class="badge">Supabase</span>
+          <span class="badge">Docker Compose</span>
           <span class="badge">Vanilla JS</span>
         </div>
         <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Air Pollution Standard Index (ISPU) monitoring system. Built automated hourly polling architecture syncing live weather and pollutant data to cloud database for real-time frontend visualization.
+          Regional Air Pollution Standard Index (ISPU) forecasting system. Built autonomous hourly polling architecture across 38 East Java jurisdictions (99.9% uptime), resilient connection pooling, and Docker Compose deployment.
         </p>
         <div class="flex gap-4 mt-4">
           <a href="web-ispu/index.html" class="btn btn-primary">View Details</a>
@@ -106,12 +108,14 @@
         </div>
         <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">ELYSIA</h3>
         <div class="flex flex-wrap gap-2">
-          <span class="badge">Gemini Flash</span>
           <span class="badge">Python</span>
+          <span class="badge">Gemini API</span>
+          <span class="badge">Flask (SSE)</span>
+          <span class="badge">NumPy</span>
           <span class="badge">Render</span>
         </div>
         <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Conversational AI video game recommender. Engineered a 6-tier cascading Gemini failover system and dual-prompt architecture to ensure high availability and deterministic JSON extraction.
+          Conversational AI video game recommender. Engineered a 6-tier cascading Gemini failover system (Commit 9ed7315) mitigating HTTP 429 quota exhaustion, two-stage vector pruning (&lt; 50 ms across 24,082 titles), and real-time SSE streaming.
         </p>
         <div class="flex gap-4 mt-4">
           <a href="elysia/index.html" class="btn btn-primary">View Details</a>
@@ -128,11 +132,13 @@
         <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">VibePlay</h3>
         <div class="flex flex-wrap gap-2">
           <span class="badge">Python</span>
+          <span class="badge">Scikit-Learn</span>
+          <span class="badge">Steam API</span>
           <span class="badge">RAWG API</span>
           <span class="badge">Vercel</span>
         </div>
         <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Interactive game recommendation marketplace. Built a hybrid content-based filtering algorithm merging large-scale RAWG datasets with live Steam prices, featuring mood-adjusted psychographic profiling.
+          Interactive video game recommendation storefront. Engineered checkpoint-persisted scraping (50-item auto-flush) and sanitization across 24,082 titles with live Steam IDR pricing, psychographic Playstyle DNA profiling, and 6-axis radar visualization.
         </p>
         <div class="flex gap-4 mt-4">
           <a href="vibeplay/index.html" class="btn btn-primary">View Details</a>
