@@ -6,11 +6,11 @@
   <title>Adnan Oktar | Projects</title>
   <!-- Icon Library: Phosphor Icons (Fluent Alternative) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <link rel="stylesheet" href="../css/tokens.css?v=3" />
-  <link rel="stylesheet" href="../css/base.css?v=3" />
-  <link rel="stylesheet" href="../css/layout.css?v=3" />
-  <link rel="stylesheet" href="../css/components.css?v=3" />
-  <link rel="stylesheet" href="../css/animations.css?v=3" />
+  <link rel="stylesheet" href="../css/tokens.css?v=5" />
+  <link rel="stylesheet" href="../css/base.css?v=5" />
+  <link rel="stylesheet" href="../css/layout.css?v=5" />
+  <link rel="stylesheet" href="../css/components.css?v=5" />
+  <link rel="stylesheet" href="../css/animations.css?v=5" />
   <link rel="icon" type="image/svg+xml" href="../img/AO-logo.svg" />
   <!-- Prevent Dark Mode FOUC -->
   <script>
@@ -51,17 +51,17 @@
   </nav>
 
   <main class="container section">
-    <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 3rem; text-align: center;">Projects</h1>
+    <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; text-align: center;">Projects</h1>
+    <p class="text-tertiary font-mono text-center" style="margin-bottom: 3rem; font-size: 0.85rem;">4 SYSTEMS // PRODUCTION-GRADE DATA PIPELINES</p>
     
-    <!-- Perfect Symmetrical Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
-      
-      <!-- REGOKEMON -->
-      <div class="card gap-4">
-        <div class="img-placeholder" style="overflow: hidden;">
-          <img src="../img/regokemon-1.jpeg" alt="REGOKEMON" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-        <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">REGOKEMON</h3>
+    <!-- FLAGSHIP: REGOKEMON (full-width horizontal card) -->
+    <div class="card project-flagship gap-0" style="margin-bottom: var(--space-8);">
+      <div class="flagship-visual">
+        <img src="../img/regokemon-1.jpeg" alt="REGOKEMON" />
+      </div>
+      <div class="flagship-content">
+        <span class="flagship-label">Flagship</span>
+        <h3 class="font-display">REGOKEMON</h3>
         <div class="flex flex-wrap gap-2">
           <span class="badge">Python</span>
           <span class="badge">OpenAI CLIP</span>
@@ -69,81 +69,82 @@
           <span class="badge">OpenCV</span>
           <span class="badge">Supabase</span>
         </div>
-        <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
+        <p class="text-secondary" style="line-height: 1.6;">
           Multimodal visual retrieval and automated card valuation engine. Implemented OpenAI CLIP (ViT-B/32) with FAISS cosine similarity (&lt; 200 ms GPU latency across 20,400+ cards), fine-grained ORB re-ranking, and automated daily price ingestion cron.
         </p>
-        <div class="flex gap-4 mt-4">
-          <a href="regokemon/index.html" class="btn btn-primary">View Details</a>
+        <div class="flex gap-4" style="flex-wrap: wrap;">
+          <a href="regokemon/index.html" class="btn btn-primary">View Case Study</a>
           <a href="https://github.com/Bejochan/pokemon-card-value-analytic-tool" class="btn btn-outline" target="_blank">Source Code</a>
         </div>
       </div>
+    </div>
 
+    <!-- SUPPORTING PROJECTS: 3-column grid -->
+    <div class="project-grid-supporting">
+      
       <!-- Web-ISPU -->
       <div class="card gap-4">
-        <div class="img-placeholder" style="overflow: hidden;">
+        <div class="img-placeholder">
           <img src="../img/ispu-1.png" alt="Web-ISPU" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
-        <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">Web-ISPU</h3>
+        <h3 class="font-display" style="font-size: 1.25rem; margin-top: 0.75rem;">Web-ISPU</h3>
         <div class="flex flex-wrap gap-2">
           <span class="badge">Python</span>
           <span class="badge">APScheduler</span>
           <span class="badge">Supabase</span>
           <span class="badge">Docker Compose</span>
-          <span class="badge">Vanilla JS</span>
         </div>
-        <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Regional Air Pollution Standard Index (ISPU) forecasting system. Built autonomous hourly polling architecture across 38 East Java jurisdictions (99.9% uptime), resilient connection pooling, and Docker Compose deployment.
+        <p class="text-secondary" style="margin-top: 0.5rem; flex-grow: 1; font-size: 0.9rem; line-height: 1.5;">
+          Regional ISPU forecasting system. Autonomous hourly polling across 38 East Java jurisdictions (99.9% uptime), resilient connection pooling, Docker Compose deployment.
         </p>
-        <div class="flex gap-4 mt-4">
-          <a href="web-ispu/index.html" class="btn btn-primary">View Details</a>
-          <a href="https://web-prediksi-ispu.vercel.app/" class="btn btn-outline" target="_blank">Live Demo</a>
-          <a href="https://github.com/tegarkusuma12/Web-ISPU" class="btn btn-outline" target="_blank">Source Code</a>
+        <div class="flex gap-2 mt-4" style="flex-wrap: wrap;">
+          <a href="web-ispu/index.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Details</a>
+          <a href="https://web-prediksi-ispu.vercel.app/" class="btn btn-outline" target="_blank" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Live</a>
+          <a href="https://github.com/tegarkusuma12/Web-ISPU" class="btn btn-outline" target="_blank" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Code</a>
         </div>
       </div>
 
       <!-- ELYSIA -->
       <div class="card gap-4">
-        <div class="img-placeholder" style="overflow: hidden;">
+        <div class="img-placeholder">
           <img src="../img/elysia-1.png" alt="ELYSIA" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
-        <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">ELYSIA</h3>
+        <h3 class="font-display" style="font-size: 1.25rem; margin-top: 0.75rem;">ELYSIA</h3>
         <div class="flex flex-wrap gap-2">
           <span class="badge">Python</span>
           <span class="badge">Gemini API</span>
           <span class="badge">Flask (SSE)</span>
           <span class="badge">NumPy</span>
-          <span class="badge">Render</span>
         </div>
-        <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Conversational AI video game recommender. Engineered a 6-tier cascading Gemini failover system (Commit 9ed7315) mitigating HTTP 429 quota exhaustion, two-stage vector pruning (&lt; 50 ms across 24,082 titles), and real-time SSE streaming.
+        <p class="text-secondary" style="margin-top: 0.5rem; flex-grow: 1; font-size: 0.9rem; line-height: 1.5;">
+          Conversational AI video game recommender. 6-tier cascading Gemini failover (Commit 9ed7315), two-stage vector pruning (&lt; 50 ms across 24,082 titles), real-time SSE streaming.
         </p>
-        <div class="flex gap-4 mt-4">
-          <a href="elysia/index.html" class="btn btn-primary">View Details</a>
-          <a href="https://elysia-video-game-recommendation.onrender.com/" class="btn btn-outline" target="_blank">Live Demo</a>
-          <a href="https://github.com/Bejochan/conversational-video-game-recommendation-assistant" class="btn btn-outline" target="_blank">Source Code</a>
+        <div class="flex gap-2 mt-4" style="flex-wrap: wrap;">
+          <a href="elysia/index.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Details</a>
+          <a href="https://elysia-video-game-recommendation.onrender.com/" class="btn btn-outline" target="_blank" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Live</a>
+          <a href="https://github.com/Bejochan/conversational-video-game-recommendation-assistant" class="btn btn-outline" target="_blank" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Code</a>
         </div>
       </div>
 
       <!-- VibePlay -->
       <div class="card gap-4">
-        <div class="img-placeholder" style="overflow: hidden;">
+        <div class="img-placeholder">
           <img src="../img/vibeplay-1.png" alt="VibePlay" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
-        <h3 class="font-display" style="font-size: 1.5rem; margin-top: 1rem;">VibePlay</h3>
+        <h3 class="font-display" style="font-size: 1.25rem; margin-top: 0.75rem;">VibePlay</h3>
         <div class="flex flex-wrap gap-2">
           <span class="badge">Python</span>
           <span class="badge">Scikit-Learn</span>
           <span class="badge">Steam API</span>
           <span class="badge">RAWG API</span>
-          <span class="badge">Vercel</span>
         </div>
-        <p class="text-secondary" style="margin-top: 1rem; flex-grow: 1;">
-          Interactive video game recommendation storefront. Engineered checkpoint-persisted scraping (50-item auto-flush) and sanitization across 24,082 titles with live Steam IDR pricing, psychographic Playstyle DNA profiling, and 6-axis radar visualization.
+        <p class="text-secondary" style="margin-top: 0.5rem; flex-grow: 1; font-size: 0.9rem; line-height: 1.5;">
+          Interactive video game recommendation storefront. Checkpoint-persisted scraping (50-item auto-flush) across 24,082 titles with live Steam IDR pricing, psychographic Playstyle DNA, 6-axis radar visualization.
         </p>
-        <div class="flex gap-4 mt-4">
-          <a href="vibeplay/index.html" class="btn btn-primary">View Details</a>
-          <a href="https://vibeplay-recommendation-system.vercel.app/" class="btn btn-outline" target="_blank">Live Demo</a>
-          <a href="https://github.com/Bejochan/video-games-recommendation-system" class="btn btn-outline" target="_blank">Source Code</a>
+        <div class="flex gap-2 mt-4" style="flex-wrap: wrap;">
+          <a href="vibeplay/index.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Details</a>
+          <a href="https://vibeplay-recommendation-system.vercel.app/" class="btn btn-outline" target="_blank" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Live</a>
+          <a href="https://github.com/Bejochan/video-games-recommendation-system" class="btn btn-outline" target="_blank" style="font-size: 0.75rem; padding: 0.5rem 1rem;">Code</a>
         </div>
       </div>
 
