@@ -31,9 +31,13 @@ a, button, .card {
   body, a, button, .card { cursor: auto !important; }
 }
 
-/* Invert Logo in Dark Mode */
+/* Invert Logo in Dark Mode (Default) */
+:root img[alt="AO Logo"],
 [data-theme="dark"] img[alt="AO Logo"] {
   filter: invert(1);
+}
+[data-theme="light"] img[alt="AO Logo"] {
+  filter: none;
 }
 
 /* Boot Loader */
@@ -112,13 +116,16 @@ body.intro-active .hero-hidden-photo {
   transform: translateX(0) translateY(0) rotate(-6deg);
 }
 
-
 .logo-twitch {
   animation: logoTwitchMove 0.45s steps(4) forwards;
   position: relative;
 }
 
 .logo-twitch img {
+  animation: flashHortensiaDark 0.45s linear forwards;
+}
+
+[data-theme="light"] .logo-twitch img {
   animation: flashHortensiaLight 0.45s linear forwards;
 }
 
@@ -135,7 +142,6 @@ body.intro-active .hero-hidden-photo {
   75%  { transform: translate(-5px, 5px) scale(1.05) rotate(-2deg); }
   100% { transform: translate(0, 0) scale(1) rotate(0); }
 }
-
 
 @keyframes flashHortensiaLight {
   0%, 14% { filter: none; }

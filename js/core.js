@@ -2,9 +2,9 @@
 const themeBtn = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
-// Check user preference or system default
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-let isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
+// Check user preference (Default: Dark Mode)
+const savedTheme = localStorage.getItem('theme_mode');
+let isDark = savedTheme !== null ? savedTheme === 'dark' : true;
 
 function setTheme(dark) {
   isDark = dark;
@@ -15,15 +15,15 @@ function setTheme(dark) {
     root.setAttribute('data-theme', 'light');
     if(themeBtn) themeBtn.innerHTML = '<i class="ph-fill ph-moon" style="font-size: 1.25rem; display: block;"></i>';
   }
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
-// Initial set
+// Initial set (no auto-persist so default remains dynamic)
 setTheme(isDark);
 
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
     setTheme(!isDark);
+    localStorage.setItem('theme_mode', isDark ? 'dark' : 'light');
   });
 }
 
