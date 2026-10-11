@@ -1,4 +1,4 @@
-﻿/* css/base.css */
+/* css/base.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 *, *::before, *::after {
@@ -15,6 +15,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
 }
 
 body {

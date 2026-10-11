@@ -166,50 +166,40 @@ body.intro-active .hero-hidden-photo {
   navigation: auto;
 }
 
+::view-transition {
+  background-color: var(--bg-base);
+}
+
+::view-transition-group(root) {
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--bg-base);
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  background-color: var(--bg-base);
+}
+
+/* Old page stays solid underneath without becoming transparent, preventing canvas exposure */
 ::view-transition-old(root) {
-  animation: pageFadeOut 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: none;
+  mix-blend-mode: normal;
+  opacity: 1;
 }
 
+/* New page cleanly fades in on top */
 ::view-transition-new(root) {
-  animation: pageFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pageCrossFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  mix-blend-mode: normal;
 }
 
-@keyframes pageFadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-}
-
-@keyframes pageFadeIn {
+@keyframes pageCrossFadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Page content smooth entrance */
-@media (prefers-reduced-motion: no-preference) {
-  main {
-    animation: mainFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-}
-
-@keyframes mainFadeIn {
-  from {
-    opacity: 0.85;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

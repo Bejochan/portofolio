@@ -8,11 +8,11 @@
   <!-- Icon Library: Phosphor Icons (Fluent Alternative) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   
-  <link rel="stylesheet" href="css/tokens.css?v=5" />
-  <link rel="stylesheet" href="css/base.css?v=5" />
-  <link rel="stylesheet" href="css/layout.css?v=5" />
-  <link rel="stylesheet" href="css/components.css?v=5" />
-  <link rel="stylesheet" href="css/animations.css?v=5" />
+  <link rel="stylesheet" href="css/tokens.css?v=9" />
+  <link rel="stylesheet" href="css/base.css?v=9" />
+  <link rel="stylesheet" href="css/layout.css?v=9" />
+  <link rel="stylesheet" href="css/components.css?v=9" />
+  <link rel="stylesheet" href="css/animations.css?v=9" />
   <link rel="icon" type="image/svg+xml" href="img/AO-logo.svg" />
   <!-- Prevent Theme FOUC (Default: Dark) -->
   <script>
@@ -25,6 +25,18 @@
         document.documentElement.setAttribute('data-theme', 'light');
       }
     })();
+  </script>
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+  <!-- Suppress boot loader on subsequent visits -->
+  <script>
+    if (sessionStorage.getItem('booted')) {
+      document.write('<style>#boot-loader { display: none !important; }</style>');
+    }
   </script>
 </head>
 <body style="overflow: hidden;">
@@ -40,7 +52,7 @@
         <a href="project/index.html" class="nav-link">Projects</a>
         <a href="persona/index.html" class="nav-link">Persona</a>
       </div>
-            <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
+      <div class="nav-links" style="display: flex; gap: 0.5rem; align-items: center;">
         <div class="lang-selector" style="position: relative;">
           <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
             <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
