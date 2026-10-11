@@ -276,14 +276,6 @@
   font-size: 2rem;
   line-height: 1.1;
 }
-.project-flagship .flagship-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent-primary);
-  font-weight: 600;
-}
 
 @media (max-width: 768px) {
   .project-flagship {
