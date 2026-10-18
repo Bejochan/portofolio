@@ -39,9 +39,9 @@
           <button id="lang-btn" class="btn btn-outline" style="padding: 0.5rem 0.75rem; display: flex; align-items: center; justify-content: center; height: 44px; cursor: pointer; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem;" aria-label="Change Language">
             <i class="ph-bold ph-translate" style="font-size: 1.2rem;"></i> EN <i class="ph-bold ph-caret-down"></i>
           </button>
-          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 160px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
+          <div id="lang-menu" class="card shadow-solid" style="position: absolute; top: 100%; right: 0; margin-top: 0.5rem; display: none; flex-direction: column; min-width: 155px; z-index: 100; padding: 0.5rem; background: var(--bg-surface); border: 2px solid var(--border-strong);">
             <a href="#" class="nav-link active" style="padding: 0.5rem; margin: 0; text-align: left; display: block;">English (EN)</a>
-            <a href="#" class="nav-link text-tertiary" style="padding: 0.5rem; margin: 0; text-align: left; cursor: not-allowed; display: block;" onclick="alert('Bahasa Indonesia version is coming soon! Stay tuned.'); return false;">Indonesia (ID)</a>
+            <a href="#" class="nav-link lang-id-btn" style="padding: 0.5rem; margin: 0; text-align: left; display: block; color: var(--text-secondary); cursor: pointer;">Indonesia (ID)</a>
           </div>
         </div>
         <button id="theme-toggle" class="btn btn-outline" style="padding: 0.5rem; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer;" aria-label="Toggle Theme">
@@ -67,7 +67,7 @@
       <div class="flex flex-col gap-4">
         <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1;">Adnan Oktar</h1>
         <p class="text-secondary font-mono">Applied Data Scientist & ML Pipeline Engineer</p>
-        <p class="text-tertiary" style="margin-top: 1rem; font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+        <p class="text-tertiary" style="margin-top: 1rem; font-size: 1.1rem; line-height: 1.6; text-align: left; max-width: 620px;">
           Applied Data Science undergraduate at Politeknik Elektronika Negeri Surabaya | PENS with 4 deployed end-to-end applications. Specializing in sub-200ms multimodal visual retrieval, 6-tier cascading LLM failover systems, and automated real-time data pipelines in Python and SQL. Actively seeking a full-time Data Science internship for Semester 6 | Late Dec 2026 to Jun 2027.
         </p>
         <div class="flex gap-4 mt-4" style="flex-wrap: wrap;">
@@ -199,9 +199,15 @@
     let isRevealed = false;
 
     // Lock scroll on Desktop
-    if (window.innerWidth > 768) {
-      document.body.style.overflowY = 'hidden';
+    function updateScrollLock() {
+      if (!isRevealed && window.innerWidth > 768) {
+        document.body.style.overflowY = 'hidden';
+      } else {
+        document.body.style.overflowY = 'auto';
+      }
     }
+    updateScrollLock();
+    window.addEventListener('resize', updateScrollLock);
 
     revealBtn.addEventListener('click', () => {
       if (!isRevealed) {

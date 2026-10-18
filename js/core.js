@@ -32,14 +32,25 @@ const cursor = document.createElement('div');
 cursor.className = 'custom-cursor';
 document.body.appendChild(cursor);
 
-document.addEventListener('mousemove', (e) => {
+window.addEventListener('mousemove', (e) => {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
+}, { passive: true });
+
+document.addEventListener('mouseleave', () => {
+  cursor.style.display = 'none';
+});
+document.addEventListener('mouseenter', () => {
+  cursor.style.display = 'block';
 });
 
-document.querySelectorAll('a, button, .card').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+// Delegate cursor hover state for static and dynamic elements (modals, buttons, links)
+document.addEventListener('mouseover', (e) => {
+  if (e.target.closest('a, button, .card, [role="button"], input, select, textarea, .nav-link, .neo-modal-close-btn')) {
+    cursor.classList.add('hover');
+  } else {
+    cursor.classList.remove('hover');
+  }
 });
 
 // Boot Loader & Typewriter
@@ -102,6 +113,97 @@ window.addEventListener('load', () => {
   }
 });
 
+// ==========================================
+// Neo-Brutalist Modal System & Language Popup
+// ==========================================
+let neoModalBackdrop = document.getElementById('neo-modal-backdrop');
+
+function createNeoModal() {
+  if (neoModalBackdrop) return;
+  
+  neoModalBackdrop = document.createElement('div');
+  neoModalBackdrop.id = 'neo-modal-backdrop';
+  neoModalBackdrop.className = 'neo-modal-backdrop';
+  neoModalBackdrop.innerHTML = `
+    <div class="neo-modal-card" role="dialog" aria-modal="true" aria-labelledby="neo-modal-title">
+      <div class="neo-modal-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <i id="neo-modal-icon" class="ph-bold ph-translate" style="font-size: 1.25rem; color: var(--accent-primary);"></i>
+          <span id="neo-modal-category" class="font-mono" style="font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">LOCALIZATION NOTICE</span>
+        </div>
+        <button id="neo-modal-close-x" class="neo-modal-close-btn" aria-label="Close Modal">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+      <div class="neo-modal-body">
+        <h3 id="neo-modal-title" class="font-display" style="font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--text-primary); line-height: 1.25;">
+          Bahasa Indonesia Sedang Disiapkan
+        </h3>
+        <p id="neo-modal-msg" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Versi Bahasa Indonesia untuk portofolio teknis ini sedang dalam tahap lokalisasi dan standardisasi konten rekayasa. Seluruh studi kasus dan pembuktian metrik saat ini tersedia lengkap pada versi bahasa Inggris (EN).
+        </p>
+        <div style="display: flex; justify-content: flex-end;">
+          <button id="neo-modal-close-btn" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+            MENGERTI
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(neoModalBackdrop);
+
+  // Close triggers
+  const closeBtn = neoModalBackdrop.querySelector('#neo-modal-close-btn');
+  const closeX = neoModalBackdrop.querySelector('#neo-modal-close-x');
+  
+  const closeModal = () => {
+    neoModalBackdrop.classList.remove('active');
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (closeX) closeX.addEventListener('click', closeModal);
+  
+  neoModalBackdrop.addEventListener('click', (e) => {
+    if (e.target === neoModalBackdrop) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && neoModalBackdrop.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
+function showNeoModal(options = {}) {
+  createNeoModal();
+  if (options.title) {
+    const titleEl = document.getElementById('neo-modal-title');
+    if (titleEl) titleEl.textContent = options.title;
+  }
+  if (options.message) {
+    const msgEl = document.getElementById('neo-modal-msg');
+    if (msgEl) msgEl.textContent = options.message;
+  }
+  if (options.category) {
+    const catEl = document.getElementById('neo-modal-category');
+    if (catEl) catEl.textContent = options.category;
+  }
+  if (options.buttonText) {
+    const btnEl = document.getElementById('neo-modal-close-btn');
+    if (btnEl) btnEl.textContent = options.buttonText;
+  }
+  
+  // Ensure custom cursor element is always the last child in body so it renders on top
+  if (cursor && cursor.parentElement === document.body) {
+    document.body.appendChild(cursor);
+  }
+  
+  // Show modal
+  requestAnimationFrame(() => {
+    neoModalBackdrop.classList.add('active');
+  });
+}
+
 // Language Dropdown Logic
 const langBtn = document.getElementById('lang-btn');
 const langMenu = document.getElementById('lang-menu');
@@ -117,6 +219,25 @@ if (langBtn && langMenu) {
   document.addEventListener('click', (e) => {
     if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
       langMenu.style.display = 'none';
+    }
+  });
+
+  // Handle click on Indonesia (ID) option
+  langMenu.addEventListener('click', (e) => {
+    const target = e.target.closest('.lang-id-btn, [data-lang="id"]');
+    // Fallback: check if clicked item text contains Indonesia
+    const isIdOption = target || (e.target.textContent && e.target.textContent.includes('Indonesia'));
+    
+    if (isIdOption) {
+      e.preventDefault();
+      e.stopPropagation();
+      langMenu.style.display = 'none';
+      showNeoModal({
+        category: 'LOCALIZATION NOTICE',
+        title: 'Bahasa Indonesia Sedang Disiapkan',
+        message: 'Versi Bahasa Indonesia untuk portofolio teknis ini sedang dalam tahap lokalisasi dan standardisasi konten rekayasa. Seluruh studi kasus dan pembuktian metrik saat ini tersedia lengkap pada versi bahasa Inggris (EN).',
+        buttonText: 'MENGERTI'
+      });
     }
   });
 }

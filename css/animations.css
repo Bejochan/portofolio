@@ -7,28 +7,30 @@
   height: 20px;
   border: 2px solid var(--accent-primary);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 9999999 !important;
   transform: translate(-50%, -50%);
   transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .custom-cursor.hover {
   width: 40px;
   height: 40px;
-  background-color: var(--accent-primary);
-  opacity: 0.3;
+  background-color: rgba(155, 148, 255, 0.25);
+  background-color: color-mix(in srgb, var(--accent-primary) 30%, transparent);
+  border: 2px solid var(--accent-primary);
+  opacity: 1;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-body {
+html, body {
   cursor: none; /* Hide default cursor */
 }
-a, button, .card {
+a, button, .card, .neo-modal-card, .neo-modal-backdrop, .neo-modal-close-btn, [role="button"] {
   cursor: none !important;
 }
 
 /* Disable custom cursor on mobile / touch devices */
 @media (pointer: coarse) {
   .custom-cursor { display: none !important; }
-  body, a, button, .card { cursor: auto !important; }
+  html, body, a, button, .card, .neo-modal-card, .neo-modal-backdrop, .neo-modal-close-btn, [role="button"] { cursor: auto !important; }
 }
 
 /* Invert Logo in Dark Mode (Default) */
