@@ -82,19 +82,19 @@
       <!-- Left Sidebar (Metadata & Links) -->
       <div class="card gap-4" style="align-self: start;">
         <h3 class="font-bold">Role</h3>
-        <p class="text-secondary font-mono">Computer Vision (Card Identification) & Data Pipeline Engineer (Team Project)</p>
+        <p class="text-secondary font-mono">Visual Retrieval & Data Pipeline Engineer | Team Project</p>
         
         <h3 class="font-bold mt-6">Tech Stack</h3>
         <div class="flex flex-wrap gap-2 mt-2">
           <span class="badge">Python 3.12</span>
-          <span class="badge">OpenAI CLIP (ViT-B/32)</span>
+          <span class="badge">OpenAI CLIP | ViT-B/32</span>
           <span class="badge">FAISS</span>
-          <span class="badge">PyTorch (CUDA)</span>
+          <span class="badge">PyTorch | CUDA</span>
           <span class="badge">OpenCV</span>
           <span class="badge">ORB</span>
           <span class="badge">Supabase</span>
           <span class="badge">GitHub Actions</span>
-          <span class="badge">YOLOv8</span>
+          <span class="badge">Cosine Similarity</span>
         </div>
 
         <h3 class="font-bold mt-6">Links</h3>
@@ -107,20 +107,20 @@
       <div class="md:col-span-2">
         <div class="card gap-6">
           <h2 class="font-display" style="font-size: 2rem;">The Engineering Challenge & Objective</h2>
-          <p class="text-secondary" style="line-height: 1.8;">Secondary collectible marketplaces require instant and highly accurate visual identification across arbitrary camera angles, variable lighting, and physical card degradation. Standard image classifiers fail when dealing with thousands of subtle holographic variations, while direct pairwise pixel comparison introduces prohibitive latency for real-time user experiences. The engineering objective was to construct a high-throughput retrieval pipeline capable of indexing 20,400+ card variations with sub-200ms latency while maintaining continuous market pricing synchronization.</p>
+          <p class="text-secondary" style="line-height: 1.8;">Secondary collectible marketplaces require instant and highly accurate visual identification across arbitrary camera angles, variable lighting, and physical card degradation. Standard image classifiers fail when dealing with thousands of subtle holographic variations, while direct pairwise pixel comparison introduces prohibitive latency for real-time user experiences. The engineering objective was to construct a high-throughput retrieval pipeline capable of indexing 20,617 card variations with sub-200ms latency while maintaining continuous market pricing synchronization.</p>
           
           <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
           <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
             <li><strong>Camera Frame Preprocessing:</strong> OpenCV (cv2) captures webcam or uploaded frames, applies Laplacian variance blur detection, and performs 4-way auto-orientation (0°, 90°, 180°, 270°).</li>
             <li><strong>Dense Vector Embedding:</strong> Images are converted into 512-dimensional embeddings using OpenAI CLIP (ViT-B/32).</li>
-            <li><strong>Sub-millisecond Vector Retrieval:</strong> FAISS <code>IndexFlatIP</code> (Cosine Similarity) retrieves candidate matches from 20,400+ pre-indexed card vectors in < 200 ms.</li>
+            <li><strong>Sub-millisecond Vector Retrieval:</strong> FAISS <code>IndexFlatIP</code> (Cosine Similarity) retrieves candidate matches from 20,617 pre-indexed card vectors in < 200 ms.</li>
             <li><strong>Fine-Grained ORB Re-Ranking:</strong> Expands candidate pool from 50 to 150 items (Commit <code>7707151</code>), using ORB feature keypoint matching and RANSAC homography estimation to discriminate holo-foil patterns.</li>
             <li><strong>Automated Price Sync & Valuation:</strong> A daily GitHub Actions cron (<code>daily_price_tracker.py</code>) queries pokemontcg.io API, calculates effective market prices, and updates Supabase (<code>card_prices</code> and <code>card_price_history</code>).</li>
           </ol>
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li><strong>Sub-200ms Vector Retrieval (CLIP + FAISS):</strong> Formatted 20,400+ card representations using OpenAI CLIP (<code>ViT-B/32</code>) 512-dimensional embeddings into a FAISS <code>IndexFlatIP</code> index, transitioning inference from CPU (~1,200 ms) to local CUDA GPU acceleration (&lt; 200 ms total latency).</li>
+            <li><strong>Sub-200ms Vector Retrieval (CLIP + FAISS):</strong> Formatted 20,617 card representations using OpenAI CLIP (<code>ViT-B/32</code>) 512-dimensional embeddings into a FAISS <code>IndexFlatIP</code> index, transitioning inference from CPU (~1,200 ms) to local CUDA GPU acceleration (&lt; 200 ms total latency).</li>
             <li><strong>Fine-Grained Holographic Discrimination (Commit <code>7707151</code>):</strong> Engineered ORB feature keypoint matching and RANSAC homography re-ranking across top 150 candidates, discriminating subtle foil variations and physical print editions under arbitrary lighting.</li>
             <li><strong>Automated Market Valuation Pipeline:</strong> Built a serverless GitHub Actions cron workflow executing daily batch upserts of live TCGPlayer and Cardmarket pricing into Supabase without operational overhead.</li>
           </ul>
@@ -128,7 +128,7 @@
           <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
             <li><strong>Vector Retrieval Latency:</strong> &lt; 200 ms (CUDA GPU Acceleration)</li>
-            <li><strong>Catalog Indexing Scale:</strong> 20,400+ Cards (512-Dimensional Dense Vectors)</li>
+            <li><strong>Catalog Indexing Scale:</strong> 20,617 Cards (512-Dimensional Dense Vectors)</li>
             <li><strong>Market Data Synchronization:</strong> Automated Daily Cron (GitHub Actions &amp; Supabase)</li>
           </ul>
         </div>
