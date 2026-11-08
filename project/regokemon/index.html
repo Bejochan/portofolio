@@ -58,7 +58,7 @@
     <a href="../index.html" class="text-secondary font-mono" style="margin-bottom: 2rem; display: inline-block;">&larr; Back to Projects</a>
     
     <h1 class="font-display" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">REGOKEMON</h1>
-    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Multimodal Visual Retrieval Pipeline & Automated Card Valuation Engine</p>
+    <p class="text-secondary font-mono" style="margin-bottom: 2rem;">Triple-Engine AI Visual Identification, Probabilistic Forecasting & Automated Market Valuation</p>
 
     <!-- Visuals -->
     <div class="grid md:grid-cols-2 gap-4" style="margin-bottom: 3rem;">
@@ -82,19 +82,20 @@
       <!-- Left Sidebar (Metadata & Links) -->
       <div class="card gap-4" style="align-self: start;">
         <h3 class="font-bold">Role</h3>
-        <p class="text-secondary font-mono">Visual Retrieval & Data Pipeline Engineer | Team Project</p>
+        <p class="text-secondary font-mono">Computer Vision, Time-Series Forecasting & Data Pipeline Engineer | Team Project</p>
         
         <h3 class="font-bold mt-6">Tech Stack</h3>
         <div class="flex flex-wrap gap-2 mt-2">
           <span class="badge">Python 3.12</span>
           <span class="badge">OpenAI CLIP | ViT-B/32</span>
-          <span class="badge">FAISS</span>
+          <span class="badge">FAISS IndexFlatIP</span>
+          <span class="badge">Amazon Chronos-Bolt</span>
           <span class="badge">PyTorch | CUDA</span>
-          <span class="badge">OpenCV</span>
-          <span class="badge">ORB</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">React 19</span>
+          <span class="badge">OpenCV | ORB</span>
           <span class="badge">Supabase</span>
           <span class="badge">GitHub Actions</span>
-          <span class="badge">Cosine Similarity</span>
         </div>
 
         <h3 class="font-bold mt-6">Links</h3>
@@ -107,28 +108,32 @@
       <div class="md:col-span-2">
         <div class="card gap-6">
           <h2 class="font-display" style="font-size: 2rem;">The Engineering Challenge & Objective</h2>
-          <p class="text-secondary" style="line-height: 1.8;">Secondary collectible marketplaces require instant and highly accurate visual identification across arbitrary camera angles, variable lighting, and physical card degradation. Standard image classifiers fail when dealing with thousands of subtle holographic variations, while direct pairwise pixel comparison introduces prohibitive latency for real-time user experiences. The engineering objective was to construct a high-throughput retrieval pipeline capable of indexing 20,617 card variations with sub-200ms latency while maintaining continuous market pricing synchronization.</p>
+          <p class="text-secondary" style="line-height: 1.8;">Secondary collectible marketplaces require instant and highly accurate visual identification across arbitrary camera angles, variable lighting, and physical card degradation. Standard image classifiers fail when dealing with thousands of subtle holographic variations, while direct pairwise pixel comparison introduces prohibitive latency for real-time user experiences. The engineering objective was to construct a high-throughput retrieval pipeline capable of indexing 20,617 card variations with sub-20ms GPU latency, recovering degraded input imagery, and generating probabilistic multi-step time-series price forecasts.</p>
           
           <h2 class="font-display mt-8" style="font-size: 2rem;">Architecture & Data Flow</h2>
           <ol class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li><strong>Camera Frame Preprocessing:</strong> OpenCV (cv2) captures webcam or uploaded frames, applies Laplacian variance blur detection, and performs 4-way auto-orientation (0°, 90°, 180°, 270°).</li>
-            <li><strong>Dense Vector Embedding:</strong> Images are converted into 512-dimensional embeddings using OpenAI CLIP (ViT-B/32).</li>
-            <li><strong>Sub-millisecond Vector Retrieval:</strong> FAISS <code>IndexFlatIP</code> (Cosine Similarity) retrieves candidate matches from 20,617 pre-indexed card vectors in < 200 ms.</li>
-            <li><strong>Fine-Grained ORB Re-Ranking:</strong> Expands candidate pool from 50 to 150 items (Commit <code>7707151</code>), using ORB feature keypoint matching and RANSAC homography estimation to discriminate holo-foil patterns.</li>
-            <li><strong>Automated Price Sync & Valuation:</strong> A daily GitHub Actions cron (<code>daily_price_tracker.py</code>) queries pokemontcg.io API, calculates effective market prices, and updates Supabase (<code>card_prices</code> and <code>card_price_history</code>).</li>
+            <li><strong>Client Compression & Camera HUD:</strong> Canvas 1280px compresses smartphone uploads by 97% (150-300 KB). Live Scanner HUD executes multithreaded asynchronous workers with 7-frame consensus smoothing at 30+ FPS.</li>
+            <li><strong>Adaptive Degradation Preprocessing:</strong> Neutralizes degraded real-world photos via Gamma LUT (gamma 0.75 for low-light, 1.6 for overexposure), directional 5x5 deblurring filter, inner artwork contour rejection, and 4-way auto-orientation (0°, 90°, 180°, 270°).</li>
+            <li><strong>Dense Vector Search (CLIP + FAISS):</strong> Extracts 512-dimensional embeddings using OpenAI CLIP (ViT-B/32) and executes FAISS <code>IndexFlatIP</code> cosine similarity across 20,617 cards in &lt; 1 ms (~18 ms GPU latency on RTX 2050).</li>
+            <li><strong>In-Memory Top-8 ORB Re-Ranking:</strong> Evaluates Top-8 candidates with in-memory descriptor caching (up to 250 items), saving &gt;1,000 ms disk I/O while achieving 93.8% real-world accuracy, calibrated with Sigmoid margin scaling (tau = 0.03).</li>
+            <li><strong>Model 3 Probabilistic Forecasting:</strong> Amazon Chronos-Bolt Mini foundation model generates 7-day multi-step quantile price curves (P10, P50, P90) in 25-35 ms GPU latency, formulating prescriptive BUY, HOLD, or SELL trading signals.</li>
+            <li><strong>Automated Ingestion & RAM Pricing:</strong> A daily GitHub Actions cron updates Supabase PostgreSQL pricing, while zero-latency in-memory lookups (0.00 ms) in RAM serve requests instantaneously.</li>
           </ol>
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Key Technical Contributions</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li><strong>Sub-200ms Vector Retrieval (CLIP + FAISS):</strong> Formatted 20,617 card representations using OpenAI CLIP (<code>ViT-B/32</code>) 512-dimensional embeddings into a FAISS <code>IndexFlatIP</code> index, transitioning inference from CPU (~1,200 ms) to local CUDA GPU acceleration (&lt; 200 ms total latency).</li>
-            <li><strong>Fine-Grained Holographic Discrimination (Commit <code>7707151</code>):</strong> Engineered ORB feature keypoint matching and RANSAC homography re-ranking across top 150 candidates, discriminating subtle foil variations and physical print editions under arbitrary lighting.</li>
-            <li><strong>Automated Market Valuation Pipeline:</strong> Built a serverless GitHub Actions cron workflow executing daily batch upserts of live TCGPlayer and Cardmarket pricing into Supabase without operational overhead.</li>
+            <li><strong>Sub-20ms Vector Retrieval & 30+ FPS Live HUD:</strong> Indexed 20,617 card representations via OpenAI CLIP (ViT-B/32) and FAISS <code>IndexFlatIP</code>, transitioning inference to local CUDA GPU acceleration (~18 ms on RTX 2050, ~83 ms on CPU) with multithreaded worker decoupling.</li>
+            <li><strong>Adaptive Preprocessing & In-Memory ORB Caching:</strong> Built gamma LUTs and directional deblurring filters that recover degraded real-world captures, paired with Top-8 hybrid ORB caching achieving 93.8% empirical accuracy without continuous disk I/O.</li>
+            <li><strong>Industrial Time-Series Forecasting (Chronos-Bolt):</strong> Integrated Amazon Chronos-Bolt Mini for zero-shot 7-day probabilistic price ribbon projections (P10/P50/P90) in 25-35 ms GPU latency, delivering prescriptive trading tunnels.</li>
+            <li><strong>Full-Stack Production System:</strong> Architected FastAPI v3.1.0 backend with 14 REST endpoints, client-side 1280px canvas compression, zero-latency in-memory pricing lookup (0.00 ms), and unattended GitHub Actions cron workflows.</li>
           </ul>
 
           <h2 class="font-display mt-8" style="font-size: 2rem;">Measurable Metrics</h2>
           <ul class="text-secondary" style="padding-left: 1.5rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.5rem; list-style-type: square;">
-            <li><strong>Vector Retrieval Latency:</strong> &lt; 200 ms (CUDA GPU Acceleration)</li>
-            <li><strong>Catalog Indexing Scale:</strong> 20,617 Cards (512-Dimensional Dense Vectors)</li>
+            <li><strong>Vector Retrieval Latency:</strong> ~18 ms (GPU RTX 2050) / ~83 ms (CPU)</li>
+            <li><strong>Identification Accuracy (Real-World):</strong> 93.8% (15/16 Cards Verified)</li>
+            <li><strong>Time-Series Forecasting Latency:</strong> 25 - 35 ms (GPU) / ~180 ms (CPU)</li>
+            <li><strong>Catalog Indexing Scale & Pricing:</strong> 20,617 Cards (0.00 ms In-Memory RAM Lookup)</li>
             <li><strong>Market Data Synchronization:</strong> Automated Daily Cron (GitHub Actions &amp; Supabase)</li>
           </ul>
         </div>
